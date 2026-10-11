@@ -6,7 +6,7 @@
 
 Trace-based Runtime Analysis for Code Evolution Review
 
-[Quick start](#quick-start) · [TRACER](#what-is-tracer) · [Ghost-code analysis](#what-is-ghost-code-analysis) · [Research](#research-and-reproducibility)
+[Quick start](#quick-start) · [TRACER](#what-is-tracer) · [Ghost-code analysis](#what-is-ghost-code-analysis)
 
 Python 3.10+ · Apache-2.0 · Research prototype
 
@@ -33,7 +33,6 @@ review of selected interpretations.*
 | Inspect a leftover Python editing script | [Ghost-code analysis](ghost_analysis/README.md) | Possible source-writing behavior and inspectable AST evidence |
 | Follow a helper through a recorded session | [Ghost-code analysis](ghost_analysis/README.md) | Invocation and target-change associations; embedded implementation comparisons |
 | Capture mini-SWE-agent workspace changes | [Recording connector](connectors/mini_swe_agent/README.md) | Actions, model records, and before/after workspace snapshots |
-| Understand or reproduce the study | [Research guide](docs/research/README.md) | Evidence stages, reported results, and external-data requirements |
 
 ## Quick start
 
@@ -168,41 +167,6 @@ ghost_code_artifact/
     ├── assets/                   Architecture figure
     └── research/                 Study scope and reproduction requirements
 ```
-
-## Research and reproducibility
-
-This repository accompanies the working manuscript **Development Histories as
-Software Evidence**. The study analyzes recorded mini-SWE-agent trajectories
-on SWE-bench and uses saved deletion results to establish task-level redundancy.
-
-| Reported study result | Count |
-|---|---:|
-| Reconstructable endpoints with matching passing outcomes | 88 |
-| Retained Python file occurrences screened | 1,662 |
-| AST source-writing candidates | 65 |
-| History-supported helpers | 62 across 40 runs |
-| Helpers with a linked embedded implementation | 25 |
-| Linked implementations matching final code / superseded | 20 / 5 |
-
-Recovery of all 62 reference helpers is a **retrospective check within the study
-cohort**, not a held-out accuracy estimate. The manuscript remains under revision.
-
-The source release includes runnable demos and analysis code. Full study
-reproduction also requires the recorded trajectory archive, inventories, and
-saved oracle evidence; those large research inputs are **not bundled here**.
-See the [research guide](docs/research/README.md) for the exact separation between
-trying the tool, rerunning analyses, and rerunning subject evaluations.
-
-## Limitations
-
-The AST analysis targets supported Python editing patterns and the files that
-were captured. Dynamic paths, unsupported constructs, and missing snapshots can
-leave evidence unresolved. Multiple operations in one action limit causal
-attribution. Review the reported source and history before drawing conclusions.
-
-Broader evaluation, additional adapters, and history-informed cleanup are
-research directions. This release provides recording and analysis tools;
-automated safe removal is not a demonstrated capability.
 
 ## Contributing and attribution
 
