@@ -25,13 +25,13 @@ def client(server, state) -> SyncClient:
     return SyncClient(state, server)
 
 
-def _create_entity(client, entity="EpsilonAI"):
+def _create_entity(client, entity="example-org"):
     client.entity_create(entity, "entity-pass", "alice", "alice-pass")
 
 
 def test_entity_create_and_login(client, state):
     _create_entity(client)
-    session = client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    session = client.login("example-org", "entity-pass", "alice", "alice-pass")
     assert session.role == "admin"
     assert state.load_session().token == session.token
 
@@ -47,10 +47,10 @@ def test_entity_create_duplicate_rejected(client):
 def test_login_requires_all_four_credentials(client):
     _create_entity(client)
     for entity, epw, user, upw in [
-        ("EpsilonAI", "WRONG", "alice", "alice-pass"),  # bad entity password
-        ("EpsilonAI", "entity-pass", "alice", "WRONG"),  # bad user password
+        ("example-org", "WRONG", "alice", "alice-pass"),  # bad entity password
+        ("example-org", "entity-pass", "alice", "WRONG"),  # bad user password
         ("NoSuchOrg", "entity-pass", "alice", "alice-pass"),  # bad entity
-        ("EpsilonAI", "entity-pass", "mallory", "alice-pass"),  # bad user
+        ("example-org", "entity-pass", "mallory", "alice-pass"),  # bad user
     ]:
         with pytest.raises(ApiError) as exc:
             client.login(entity, epw, user, upw)
@@ -60,7 +60,7 @@ def test_login_requires_all_four_credentials(client):
 
 def test_server_stores_only_hashes(client, server):
     _create_entity(client)
-    entity = server.entities["epsilonai"]
+    entity = server.entities["example-org"]
     assert entity["passHash"].startswith("scrypt$")
     assert "entity-pass" not in str(server.entities)
     assert "alice-pass" not in str(server.entities)
@@ -68,22 +68,22 @@ def test_server_stores_only_hashes(client, server):
 
 def test_admin_can_add_user_and_admin(client, server):
     _create_entity(client)
-    client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    client.login("example-org", "entity-pass", "alice", "alice-pass")
     client.add_user("bob", "bob-pass", "user")
     client.add_user("carol", "carol-pass", "admin")
-    users = server.entities["epsilonai"]["users"]
+    users = server.entities["example-org"]["users"]
     assert users["bob"]["role"] == "user"
     assert users["carol"]["role"] == "admin"
     # both can log in with entity + own credentials
-    client.login("EpsilonAI", "entity-pass", "bob", "bob-pass")
-    client.login("EpsilonAI", "entity-pass", "carol", "carol-pass")
+    client.login("example-org", "entity-pass", "bob", "bob-pass")
+    client.login("example-org", "entity-pass", "carol", "carol-pass")
 
 
 def test_non_admin_cannot_add_users(client):
     _create_entity(client)
-    client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    client.login("example-org", "entity-pass", "alice", "alice-pass")
     client.add_user("bob", "bob-pass", "user")
-    client.login("EpsilonAI", "entity-pass", "bob", "bob-pass")
+    client.login("example-org", "entity-pass", "bob", "bob-pass")
     with pytest.raises(ApiError) as exc:
         client.add_user("eve", "eve-pass", "admin")
     assert exc.value.code == "forbidden"
@@ -92,15 +92,15 @@ def test_non_admin_cannot_add_users(client):
 
 def test_added_admin_can_add_users(client):
     _create_entity(client)
-    client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    client.login("example-org", "entity-pass", "alice", "alice-pass")
     client.add_user("carol", "carol-pass", "admin")
-    client.login("EpsilonAI", "entity-pass", "carol", "carol-pass")
+    client.login("example-org", "entity-pass", "carol", "carol-pass")
     client.add_user("dave", "dave-pass")  # no exception
 
 
 def test_duplicate_username_rejected(client):
     _create_entity(client)
-    client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    client.login("example-org", "entity-pass", "alice", "alice-pass")
     client.add_user("bob", "b1")
     with pytest.raises(ApiError) as exc:
         client.add_user("BOB", "b2")  # case-insensitive
@@ -109,7 +109,7 @@ def test_duplicate_username_rejected(client):
 
 def test_logout_revokes_token(client, state, server):
     _create_entity(client)
-    session = client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    session = client.login("example-org", "entity-pass", "alice", "alice-pass")
     token = session.token
     client.logout()
     assert state.load_session() is None
@@ -128,9 +128,9 @@ def test_operations_require_login(client):
 
 def test_status_lists_members(client):
     _create_entity(client)
-    client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    client.login("example-org", "entity-pass", "alice", "alice-pass")
     client.add_user("bob", "bob-pass")
     info = client.status()
-    assert info["entity"] == "EpsilonAI"
+    assert info["entity"] == "example-org"
     assert {m["username"] for m in info["members"]} == {"alice", "bob"}
     assert info["latestVersion"] == 0

@@ -134,7 +134,7 @@ def cmd_entity_create(args: argparse.Namespace, state: LocalState) -> int:
             border_style="cyan",
         )
     )
-    entity = _prompt("Entity name (e.g. EpsilonAI)", args.entity)
+    entity = _prompt("Entity name (e.g. example-org)", args.entity)
     entity_password = _prompt_secret("Entity password", args.entity_password, confirm=True)
     admin = _prompt("Your admin username", args.admin)
     admin_password = _prompt_secret("Your admin password", args.admin_password, confirm=True)

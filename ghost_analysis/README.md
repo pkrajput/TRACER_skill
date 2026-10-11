@@ -99,7 +99,8 @@ archive importer. The demo demonstrates the required archive and batch layout.
 
 The package includes the existing SWE-bench research analysis source. Original
 benchmark recordings, oracle results, product-source evidence, and qualitative
-author-review records are not bundled. The demo is an implementation example,
+author-review records are distributed in the separate
+`tracer-ghost-data-anonymous.zip`, rather than this source ZIP. The demo is an implementation example,
 not empirical replication of the paper.
 
 ## Tests and code map
@@ -119,8 +120,8 @@ python3 -m unittest discover -s ghost_analysis/tests -v
 | `validate_and_annotate.py` | Original fixed-cohort source checks and review annotations |
 | `paper_results.py` | Audit saved oracle outcome vectors and join structural results |
 
-The research modules originate from the structural-study implementation at
-commit `51e81ebc6b6c6122904decc46aba409e9e741073`; release changes add package imports,
-portable entry points, synthetic examples, and usability tests. The old helper
-reuse, retrieval-interference, and greedy-cleanup experiments are separate from
-this AST/history analysis and are not included here.
+The research modules originate from the structural-study implementation;
+release changes add package imports, portable entry points, synthetic examples,
+and usability tests. The old helper reuse, retrieval-interference, and
+greedy-cleanup experiments are separate from this AST/history analysis and are
+not included here.

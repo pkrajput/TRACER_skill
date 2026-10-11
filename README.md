@@ -41,7 +41,7 @@ the TRACER demo also needs **Git**. Neither demo needs an API key, Docker, a GPU
 or the study archives. Run the commands below from the repository root.
 
 ```sh
-git clone https://github.com/pkrajput/ghost_code_artifact.git
+unzip tracer-ghost-code-anonymous.zip
 cd ghost_code_artifact
 ```
 

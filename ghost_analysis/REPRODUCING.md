@@ -1,8 +1,11 @@
 # Reproducing the recorded SWE-bench analysis
 
 The portable [demo](README.md#try-it-in-a-minute) runs immediately. Full study
-reproduction additionally requires the original recorded archive and saved
-evaluation batch. These inputs are not included or downloaded by this release.
+reproduction additionally requires the recorded archive and saved evaluation
+batch. The separate `tracer-ghost-data-anonymous.zip` contains the anonymized
+study evidence, baseline-source cache, and an offline verification script;
+follow its README for the packaged paths. The source ZIP does not include or
+download those empirical inputs.
 Use Python 3.10+ with normal assertion checking (do not pass `-O`): the original
 research validators use assertions for evidence consistency checks.
 

@@ -6,7 +6,7 @@ from codegraph_trace import symdisplay
 from codegraph_trace.query import format_touched_nodes
 from codegraph_trace.store.trace_db import TraceDB
 
-QN = "Users-prateek.rajput-Documents-epsilonAI-TRACER-e2e_demo-game.js.chess"
+QN = "Users-reviewer-Documents-example-org-TRACER-e2e_demo-game.js.chess"
 
 
 # -- symdisplay -----------------------------------------------------------

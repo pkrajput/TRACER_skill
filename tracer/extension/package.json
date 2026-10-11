@@ -3,7 +3,7 @@
   "displayName": "Codegraph Recorder",
   "description": "Thin shell over the codegraph-trace CLI: records human commits into the trace, keeps the graph fresh (reindex + reconcile), keeps the decision ledger up to date, and shows everything in the editor. All intelligence stays in the Python CLI.",
   "version": "0.1.0",
-  "publisher": "epsilonai",
+  "publisher": "example-org",
   "engines": {
     "vscode": "^1.85.0"
   },

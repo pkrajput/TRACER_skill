@@ -161,7 +161,7 @@
       "archive_path": "TRACER/codegraph_trace/sync/cli.py",
       "release_path": "codegraph_trace/sync/cli.py",
       "original_sha256": "240893cc06070c47dc64c97d238c121cf3191aec92b515ce685d092226722b1e",
-      "adapted": false
+      "adapted": true
     },
     {
       "archive_path": "TRACER/codegraph_trace/sync/client.py",
@@ -425,7 +425,7 @@
       "archive_path": "TRACER/tests/test_change_review.py",
       "release_path": "tests/test_change_review.py",
       "original_sha256": "4121ac0ef7511c032d7fba70ee9742e905ae5d3765197809c47fdddff75119fd",
-      "adapted": false
+      "adapted": true
     },
     {
       "archive_path": "TRACER/tests/test_discover_graph_db.py",
@@ -473,7 +473,7 @@
       "archive_path": "TRACER/tests/test_panel.py",
       "release_path": "tests/test_panel.py",
       "original_sha256": "a40c79c033f40816097ff13a10388af24e5d16c2e64cb456de06ae06e5a9279d",
-      "adapted": false
+      "adapted": true
     },
     {
       "archive_path": "TRACER/tests/test_recent_activity.py",
@@ -509,13 +509,13 @@
       "archive_path": "TRACER/tests/test_symdisplay.py",
       "release_path": "tests/test_symdisplay.py",
       "original_sha256": "cedc56791aa9a6316508cbd84852e66a07812c823f95b693aa3232a031c62ca0",
-      "adapted": false
+      "adapted": true
     },
     {
       "archive_path": "TRACER/tests/test_sync_auth.py",
       "release_path": "tests/test_sync_auth.py",
       "original_sha256": "8bfeeadded1ccf8c4d3f85a36201e5b189628bb11e304ec410bf6caef0001596",
-      "adapted": false
+      "adapted": true
     },
     {
       "archive_path": "TRACER/tests/test_sync_crypto.py",
@@ -533,7 +533,7 @@
       "archive_path": "TRACER/tests/test_sync_pushpull.py",
       "release_path": "tests/test_sync_pushpull.py",
       "original_sha256": "20564256f707a81581e775e0473541009d8c0bf39617bfe286bc78c4aa1bdc21",
-      "adapted": false
+      "adapted": true
     }
   ]
 }

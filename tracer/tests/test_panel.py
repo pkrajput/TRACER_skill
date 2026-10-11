@@ -516,7 +516,7 @@ def _login(monkeypatch, tmp_path: Path, username: str, role: str) -> None:
     home = tmp_path / f"tracer-{username}"
     monkeypatch.setenv("TRACER_HOME", str(home))
     LocalState(home=home).save_session(
-        Session(entity="EpsilonAI", username=username, role=role, token="t",
+        Session(entity="example-org", username=username, role=role, token="t",
                 expires_at="2099-01-01T00:00:00+00:00")
     )
 
@@ -530,10 +530,10 @@ def test_api_review_is_empty_and_clear_without_a_ledger(client):
 
 
 def test_api_review_lights_up_the_changed_entities(session, client, monkeypatch, tmp_path):
-    _login(monkeypatch, tmp_path, "prateek", "admin")
+    _login(monkeypatch, tmp_path, "reviewer", "admin")
     _seed_review(session)
     data = _get_json(client, "/api/review")
-    assert data["viewer"] == {"username": "prateek", "role": "admin", "can_decide": True}
+    assert data["viewer"] == {"username": "reviewer", "role": "admin", "can_decide": True}
     assert data["highlight"]["files"] == ["src/calc.py"]
     assert data["highlight"]["symbols"] == ["scratch.src.calc.better_helper"]
     assert data["highlight"]["seqs"] == [2, 3]  # the new node and the one it lands on
@@ -565,14 +565,14 @@ def test_api_review_offers_no_verdict_to_a_plain_user(session, client, monkeypat
 def test_api_review_decide_records_the_verdict(session, client, monkeypatch, tmp_path):
     from codegraph_trace.sync import review
 
-    _login(monkeypatch, tmp_path, "prateek", "admin")
+    _login(monkeypatch, tmp_path, "reviewer", "admin")
     _seed_review(session)
     resp = client.post("/api/review/decide",
                        json={"unit_id": "oh-conv1-3", "verdict": "rejected"})
     assert resp.status_code == 200
     assert json.loads(resp.get_data(as_text=True))["status"] == "rejected"
     ledger = review.read_ledger(session.trace_dir / review.REVIEW_FILENAME)
-    assert ledger.get("oh-conv1-3").decided_by == "prateek"
+    assert ledger.get("oh-conv1-3").decided_by == "reviewer"
 
     bad = client.post("/api/review/decide", json={"unit_id": "nope", "verdict": "accepted"})
     assert bad.status_code == 400
@@ -582,7 +582,7 @@ def test_api_review_shows_the_author_their_rejected_change(session, client, monk
     from codegraph_trace.sync import review
 
     _login(monkeypatch, tmp_path, "teammate", "user")
-    _seed_review(session, status=review.REJECTED, decided_by="prateek",
+    _seed_review(session, status=review.REJECTED, decided_by="reviewer",
                  decided_at="2026-07-30T10:00:00+00:00")
     data = _get_json(client, "/api/review")
     assert [u["unit_id"] for u in data["rejected"]] == ["oh-conv1-3"]

@@ -133,7 +133,7 @@ def test_a_recorded_unit_is_never_recreated_or_reset_to_pending(tmp_path):
     second = _commit(repo, "js/app.js", "y\n", "second")
     _record(repo, "s2", 2, before=sha, after=second)
     review.record_local(repo, ledger, author="teammate")
-    review.decide_in(ledger, "s2", review.REJECTED, by="prateek")
+    review.decide_in(ledger, "s2", review.REJECTED, by="reviewer")
     review.record_local(repo, ledger, author="teammate")
     assert [(u.unit_id, u.status) for u in ledger.units] == [("s2", review.REJECTED)]
 
@@ -154,7 +154,7 @@ def test_unit_falls_back_to_reasoning_when_git_has_no_commit(tmp_path):
 
 def test_you_do_not_review_your_own_change(tmp_path):
     ledger = review.ReviewLedger(units=[review.ReviewUnit(unit_id="s2", author="teammate")])
-    assert [u.unit_id for u in ledger.pending_for("prateek")] == ["s2"]
+    assert [u.unit_id for u in ledger.pending_for("reviewer")] == ["s2"]
     assert ledger.pending_for("teammate") == []
 
 
@@ -163,7 +163,7 @@ def test_merge_keeps_the_latest_verdict_and_adds_unknown_units():
         units=[
             review.ReviewUnit(unit_id="a", status=review.PENDING),
             review.ReviewUnit(
-                unit_id="b", status=review.REJECTED, decided_by="prateek",
+                unit_id="b", status=review.REJECTED, decided_by="reviewer",
                 decided_at="2026-07-30T10:00:00+00:00",
             ),
         ],
@@ -173,7 +173,7 @@ def test_merge_keeps_the_latest_verdict_and_adds_unknown_units():
     theirs = review.ReviewLedger(
         units=[
             review.ReviewUnit(
-                unit_id="a", status=review.ACCEPTED, decided_by="prateek",
+                unit_id="a", status=review.ACCEPTED, decided_by="reviewer",
                 decided_at="2026-07-30T09:00:00+00:00", diff="diff for a\n",
             ),
             review.ReviewUnit(
@@ -205,11 +205,11 @@ def test_decide_rejects_unknown_units_and_bad_verdicts(tmp_path):
     path = review.ledger_path(tmp_path)
     review.write_ledger(path, review.ReviewLedger(units=[review.ReviewUnit(unit_id="a")]))
     with pytest.raises(review.ReviewError):
-        review.decide(path, "nope", review.ACCEPTED, by="prateek")
+        review.decide(path, "nope", review.ACCEPTED, by="reviewer")
     with pytest.raises(review.ReviewError):
-        review.decide(path, "a", "maybe", by="prateek")
-    unit = review.decide(path, "a", review.REJECTED, by="prateek")
-    assert unit.decided_by == "prateek" and unit.decided_at
+        review.decide(path, "a", "maybe", by="reviewer")
+    unit = review.decide(path, "a", review.REJECTED, by="reviewer")
+    assert unit.decided_by == "reviewer" and unit.decided_at
     assert review.read_ledger(path).get("a").status == review.REJECTED
 
 
@@ -248,9 +248,9 @@ def server() -> MockTransport:
 
 @pytest.fixture()
 def admin(tmp_path, server) -> Member:
-    dev = Member(tmp_path / "prateek", server)
-    dev.client.entity_create("EpsilonAI", "ep", "prateek", "pp")
-    dev.client.login("EpsilonAI", "ep", "prateek", "pp")
+    dev = Member(tmp_path / "reviewer", server)
+    dev.client.entity_create("example-org", "ep", "reviewer", "pp")
+    dev.client.login("example-org", "ep", "reviewer", "pp")
     dev.client.register_key(dev.keypair)
     return dev
 
@@ -259,7 +259,7 @@ def admin(tmp_path, server) -> Member:
 def author(tmp_path, server, admin) -> Member:
     admin.client.add_user("teammate", "tp", role="user")
     dev = Member(tmp_path / "teammate", server)
-    dev.client.login("EpsilonAI", "ep", "teammate", "tp")
+    dev.client.login("example-org", "ep", "teammate", "tp")
     dev.client.register_key(dev.keypair)
     return dev
 
@@ -303,7 +303,7 @@ def test_the_whole_loop_over_the_real_cli(admin, author, server, monkeypatch, ca
     for banned in ("New commits", "New trace steps", "Changed files", "see:", "step#"):
         assert banned not in out
     ledger = admin.ledger()
-    assert [u.unit_id for u in ledger.pending_for("prateek")] == ["s2", "s3"]
+    assert [u.unit_id for u in ledger.pending_for("reviewer")] == ["s2", "s3"]
     assert "+function a() { return 3; }" in ledger.get("s3").diff
 
     # Only the admin may judge, and the verdicts travel back on their next push.
@@ -333,7 +333,7 @@ def test_the_whole_loop_over_the_real_cli(admin, author, server, monkeypatch, ca
 
     # Accepting the replacement clears the loop on both sides.
     _cli(admin, ["pull", "--repo", str(admin.repo)], server, monkeypatch, capsys)
-    assert [u.unit_id for u in admin.ledger().pending_for("prateek")] == ["s4"]
+    assert [u.unit_id for u in admin.ledger().pending_for("reviewer")] == ["s4"]
     _cli(admin, ["review", "--repo", str(admin.repo), "accept", "s4"],
          server, monkeypatch, capsys)
     assert admin.ledger().is_clear()

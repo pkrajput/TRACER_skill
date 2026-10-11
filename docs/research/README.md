@@ -14,8 +14,15 @@ small examples available separately from the full research data.
 | Rerun agents or deletion trials | Recording connector source | Separately provisioned mini-SWE-agent, task environments, model access, evaluation harness, and study configuration |
 
 The demos validate the documented workflows. They do not reproduce the empirical
-counts. The full archived research inputs have not been deposited with this
-source release, so a fresh clone alone cannot reproduce the paper tables.
+counts. The source ZIP excludes empirical trajectories, saved evaluation results,
+and language-review records. These are prepared separately in
+`tracer-ghost-data-anonymous.zip`, with an evidence inventory, released-file
+checksums, and an offline verification script. Extract its `ghost_code_data/`
+directory alongside the code directory and follow its `README.md`.
+
+Preparing the companion ZIP does not publish it: no deposit URL or DOI is claimed
+here. The data package contains an anonymized derivative of the recorded evidence;
+its sanitization report distinguishes released bytes from historical hashes.
 
 ## Evidence stages
 
@@ -57,8 +64,8 @@ for all 62; combined deletion checks also preserve the recorded outcomes in the
 Available narration or exposed reasoning occurs at the reference construction
 action for 48 helpers; 14 lack it. An author verified five selected language
 interpretations. This is not a human-validated annotation of the full cohort;
-the cohort-wide interpretations remain provisional. The release does not bundle
-the original language-review records.
+the cohort-wide interpretations remain provisional. These language-review records
+are in the separate data ZIP, rather than the source ZIP.
 
 These findings are taken from the working manuscript and final discovery and
 structural-analysis reports. The examples informed prototype development, so

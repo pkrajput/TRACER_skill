@@ -27,9 +27,6 @@ languages = [
 codegraph-trace = "codegraph_trace.cli:main"
 tracer = "codegraph_trace.sync.cli:main"
 
-[project.urls]
-Repository = "https://github.com/pkrajput/ghost_code_artifact"
-
 [tool.setuptools.packages.find]
 include = ["codegraph_trace*"]
 

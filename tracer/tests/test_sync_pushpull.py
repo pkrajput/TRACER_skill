@@ -53,8 +53,8 @@ def server() -> MockTransport:
 @pytest.fixture()
 def alice(tmp_path, server) -> Device:
     dev = Device(tmp_path / "alice", server)
-    dev.client.entity_create("EpsilonAI", "entity-pass", "alice", "alice-pass")
-    dev.client.login("EpsilonAI", "entity-pass", "alice", "alice-pass")
+    dev.client.entity_create("example-org", "entity-pass", "alice", "alice-pass")
+    dev.client.login("example-org", "entity-pass", "alice", "alice-pass")
     dev.client.register_key(dev.keypair)
     return dev
 
@@ -63,7 +63,7 @@ def alice(tmp_path, server) -> Device:
 def bob(tmp_path, server, alice) -> Device:
     alice.client.add_user("bob", "bob-pass")
     dev = Device(tmp_path / "bob", server)
-    dev.client.login("EpsilonAI", "entity-pass", "bob", "bob-pass")
+    dev.client.login("example-org", "entity-pass", "bob", "bob-pass")
     dev.client.register_key(dev.keypair)
     return dev
 
@@ -152,7 +152,7 @@ def test_tampered_blob_at_rest_is_detected(alice, bob, server):
     assert "integrity" in str(exc.value) or "tampered" in str(exc.value)
 
     # even if the attacker also fixes the recorded sha256, AEAD still refuses
-    entity = server.entities["epsilonai"]
+    entity = server.entities["example-org"]
     entity["versions"][1]["sha256"] = hashlib.sha256(bytes(tampered)).hexdigest()
     with pytest.raises(CryptoError):
         bob.client.pull(bob.repo)
@@ -161,7 +161,7 @@ def test_tampered_blob_at_rest_is_detected(alice, bob, server):
 def test_member_without_registered_key_cannot_decrypt_new_pushes(tmp_path, server, alice):
     alice.client.add_user("carol", "carol-pass")
     carol = Device(tmp_path / "carol", server)
-    carol.client.login("EpsilonAI", "entity-pass", "carol", "carol-pass")
+    carol.client.login("example-org", "entity-pass", "carol", "carol-pass")
     # carol has a keypair locally but never registered it
     alice.write_trace("pre-carol data")
     alice.client.push(alice.repo)

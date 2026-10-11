@@ -29,6 +29,8 @@ Release adaptations:
   saved configuration exists.
 - Replaced workstation-specific VS Code launch paths with a portable launch
   configuration.
+- Replaced personal and organization identifiers in examples, test fixtures,
+  and extension metadata with neutral placeholders.
 - Added Apache-2.0 metadata and license copies for independently built Python
   packages, as selected by the artifact owner.
 
