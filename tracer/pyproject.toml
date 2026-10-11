@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codegraph-trace"
+version = "0.1.0"
+description = "TRACER: link development steps and recorded rationale to the code they changed."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "numpy>=1.24"]
+panel = ["flask>=3.0"]
+embeddings = ["chromadb>=0.5.0", "sentence-transformers>=2.2.2"]
+sync = ["pyrage>=1.2", "rich>=13.0"]
+languages = [
+    "tree-sitter>=0.23",
+    "tree-sitter-javascript>=0.23",
+    "tree-sitter-java>=0.23",
+    "tree-sitter-css>=0.23",
+]
+
+[project.scripts]
+codegraph-trace = "codegraph_trace.cli:main"
+tracer = "codegraph_trace.sync.cli:main"
+
+[project.urls]
+Repository = "https://github.com/pkrajput/ghost_code_artifact"
+
+[tool.setuptools.packages.find]
+include = ["codegraph_trace*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

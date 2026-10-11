@@ -1,0 +1,1 @@
+{"kind": "MessageEvent", "id": "e2", "timestamp": "2026-06-18T10:00:02Z", "source": "agent", "llm_message": {"role": "assistant", "content": [{"type": "text", "text": "I'll create src/calc.py with an add(a, b) function."}]}}

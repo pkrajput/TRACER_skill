@@ -1,0 +1,7 @@
+TRACER & Ghost-Code Analysis
+Copyright 2026 the TRACER and Ghost-Code Analysis contributors.
+
+This distribution contains research software for recording development history
+and analyzing retained Python source-writing helpers.
+
+See THIRD_PARTY_NOTICES.md for source provenance and external integrations.

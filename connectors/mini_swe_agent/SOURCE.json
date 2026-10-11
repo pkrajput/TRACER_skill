@@ -1,0 +1,31 @@
+{
+  "source_archive": "ghost_code_swe_bench.zip",
+  "source_freeze_version": 2,
+  "source_freeze_utc": "2026-09-16T13:00:52.812094+00:00",
+  "files": {
+    "mini_tracer_adapter.py": {
+      "archive_member": "ghost_model_families/src/mini_tracer_adapter.py",
+      "source_sha256": "fbe0fc8cbdc24eb9bbd8bda7ee90ad1e4ada698a4819953f8b60f070c3cd16c5"
+    },
+    "snapshots.py": {
+      "archive_member": "ghost_model_families/src/snapshots.py",
+      "source_sha256": "696406b8e80c182fae29a43b8168136c875b0a25a9b21f594abe26f8251d69b2"
+    },
+    "budget_gateway.py": {
+      "archive_member": "ghost_model_families/src/budget_gateway.py",
+      "source_sha256": "a80f931d504d178cc74a9e9cdd531053c1c66acf326de5053568480faa943dc8"
+    },
+    "bounded_http.py": {
+      "archive_member": "ghost_model_families/src/bounded_http.py",
+      "source_sha256": "fe54c26c881bc8ebe92f59f9ea480e4d8c72bca048c1f00e8d43403914cdcff4"
+    }
+  },
+  "packaging_changes": [
+    "Three sibling imports in mini_tracer_adapter.py are package-relative."
+  ],
+  "license_note": "No license file was present for these connector sources in the source archive. The author-selected release license is Apache-2.0; see ../../LICENSE.",
+  "study_dependency": {
+    "mini-swe-agent": "2.4.6",
+    "evidence": "Manuscript ghost_code_nier.tex, Population subsection"
+  }
+}

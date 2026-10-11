@@ -1,0 +1,3 @@
+# Agent version reported in the manuscript; dependencies retain upstream licenses.
+mini-swe-agent==2.4.6
+requests
