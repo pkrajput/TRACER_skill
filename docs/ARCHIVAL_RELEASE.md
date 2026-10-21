@@ -21,10 +21,10 @@ tables, and a manuscript snapshot. It supports local recomputation of the
 reported shared-cohort results and investigation funnels with no model calls.
 The ZIP size and MD5 were verified against the Zenodo record on 21 October 2026.
 
-Subsequent documentation and manuscript revisions on GitHub do not change that
-archived release. `PAPER_VERSION.json` identifies the manuscript PDF in the
-current checkout. The code retains its Apache-2.0 license, and third-party
-components retain their own terms.
+Subsequent repository changes do not change that archived release. The current
+tool repository does not bundle the manuscript. It is maintained in the
+[separate paper repository](https://github.com/pkrajput/ghost_code). The code
+retains its Apache-2.0 license, and third-party components retain their own terms.
 
 ## Scope of the evidence
 

@@ -3,7 +3,7 @@
 **Trace-based Runtime Analysis for Continuous Evolution and Release**
 
 This is the skill and implementation artifact for [*Securing Agent-Generated Code
-Through Development History*](docs/paper.pdf), with [manuscript sources](https://github.com/pkrajput/ghost_code).
+Through Development History*](https://github.com/pkrajput/ghost_code).
 The study release is archived on [Zenodo](https://doi.org/10.5281/zenodo.23530070).
 TRACER connects current Python symbols and SAST
 findings to recorded structural changes and separately captured development
@@ -38,7 +38,7 @@ functional and security evaluations, with verified terminal completion.
   memory, a boundary gate, and one feedback retry. This compares the complete
   workflows, including the extra retry, rather than memory alone.
 
-See the [paper](docs/paper.pdf) for generator and stratum breakdowns, and
+See the [separate paper repository](https://github.com/pkrajput/ghost_code) for the manuscript, and
 [frozen evidence](evidence/README.md) for the underlying populations.
 
 ## Quick start
@@ -145,10 +145,10 @@ recomputation does not.
 Rajput, P., & Khan, S. (2026). *Securing Agent-Generated Code Through Development
 History*. Zenodo. https://doi.org/10.5281/zenodo.23530070
 
-The DOI preserves the `v0.1.0` release with software, a manuscript snapshot, and
-derived study records. This repository also carries subsequent documentation
-and manuscript updates. Raw investigator transcripts, complete evaluator logs,
-and container exports are outside that deposit.
+The DOI preserves the `v0.1.0` release with software and derived study records.
+This repository distributes the tool, documentation, and supporting evidence.
+The paper is maintained separately. Raw investigator transcripts, complete
+evaluator logs, and container exports are outside that deposit.
 
 Code is licensed under [Apache-2.0](LICENSE). See [CITATION.cff](CITATION.cff),
 [third-party notices](THIRD_PARTY_NOTICES.md), and
