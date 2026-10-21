@@ -1,32 +1,20 @@
-name: Source and demo checks
-
-on:
-  push:
-  pull_request:
-
-permissions:
-  contents: read
-
+name: Local artifact checks
+on: [push, pull_request]
 jobs:
-  checks:
+  verify:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ['3.10', '3.12']
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install TRACER and test extras
-        run: python -m pip install -e './tracer[dev,panel,sync,languages]' -e ./tracer/query_layer
-      - name: Ghost-script analysis tests
-        run: python -m unittest discover -s ghost_analysis/tests -v
-      - name: Connector offline smoke check
-        run: python -m connectors.mini_swe_agent.smoke
-      - name: TRACER tests
-        run: python -m pytest tracer/tests tracer/query_layer/tests
-      - name: Analysis demo
-        run: python -m ghost_analysis demo --out outputs/ghost-demo
-      - name: Recording demo
-        run: python tracer/examples/quickstart.py
+          python-version: '3.11'
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '11'
+      - run: python -m pip install -e '.[test]'
+      - run: python scripts/smoke.py
+      - run: python scripts/check_core.py
+      - run: python scripts/recompute_results.py
+      - run: python -m security_ground_truth.temporal_security.gumtree_install
+      - run: python -m unittest security_ground_truth.temporal_security.test_gumtree

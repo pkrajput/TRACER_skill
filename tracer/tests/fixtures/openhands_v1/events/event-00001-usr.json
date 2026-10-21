@@ -1,1 +1,0 @@
-{"kind": "MessageEvent", "id": "e1", "timestamp": "2026-06-18T10:00:01Z", "source": "user", "llm_message": {"role": "user", "content": [{"type": "text", "text": "Create a calculator module with an add function."}]}}

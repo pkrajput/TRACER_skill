@@ -1,0 +1,21 @@
+Generator,Arm,N,Base F/S,Final F,Final S,New S,Lost S
+Claude 4 Sonnet,C0,83,81/15,81,16,1,0
+Claude 4 Sonnet,C1,83,81/15,81,16,1,0
+Claude 4 Sonnet,C2,83,81/15,81,18,3,0
+Claude 4 Sonnet,C3,83,81/15,81,16,1,0
+GLM-4.7-Flash,C0,29,29/5,28,5,0,0
+GLM-4.7-Flash,C1,29,29/5,28,5,0,0
+GLM-4.7-Flash,C2,29,29/5,28,5,0,0
+GLM-4.7-Flash,C3,29,29/5,28,5,0,0
+GLM-5,C0,18,18/2,18,2,0,0
+GLM-5,C1,18,18/2,18,2,0,0
+GLM-5,C2,18,18/2,18,2,0,0
+GLM-5,C3,18,18/2,18,2,0,0
+Gemini 2.5 Pro,C0,24,24/6,24,6,0,0
+Gemini 2.5 Pro,C1,24,24/6,24,6,0,0
+Gemini 2.5 Pro,C2,24,24/6,24,6,0,0
+Gemini 2.5 Pro,C3,24,24/6,24,6,0,0
+Gemini 3 Pro,C0,55,54/16,54,16,0,0
+Gemini 3 Pro,C1,55,54/16,54,16,0,0
+Gemini 3 Pro,C2,55,54/16,54,17,1,0
+Gemini 3 Pro,C3,55,54/16,54,18,2,0

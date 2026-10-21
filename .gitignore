@@ -1,35 +1,14 @@
-# Local Python environments and build products
-.venv/
-venv/
 __pycache__/
 *.py[cod]
 *.egg-info/
-.pytest_cache/
+.venv/
 build/
 dist/
-
-# Local credentials and configuration
+.pytest_cache/
 .env
 .env.*
-!.env.example
 *.pem
 *.key
-
-# Research inputs and generated outputs live outside the release source
-/data/
-/outputs/
-/artifacts/
-/runs/
-*.zip
-*.tar
-*.tar.gz
-*.sqlite
-*.sqlite3
-*.db
-.codegraph/
-.codegraph-trace/
-.tracer/
-node_modules/
-/tracer/extension/out/
-/tracer/extension/.vscode-test/
-.DS_Store
+*.sqlite*
+*.log
+/local-output/

@@ -1,0 +1,6 @@
+Bucket (priority order),DeepSeek,Gemini
+repair_error,3,14
+positive_attempt_rejected,10,5
+recorded_refutation_without_rejected_positive_attempt,42,96
+inconclusive_without_positive_attempt_or_refutation,16,14
+localized_but_unassessed,1,0

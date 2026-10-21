@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tracer-security-skill"
+version = "0.1.0"
+description = "Symbol-linked development evidence for security investigation and repair memory"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Prateek Rajput", email = "prateek.rajput@uni.lu"},
+  {name = "Shahzeb Khan"},
+  {name = "Jacques Klein"},
+  {name = "Tegawendé F. Bissyandé"},
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["jsonschema>=3.2,<5"]
+
+[project.scripts]
+tracer-security = "tracer_skill.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tracer_skill*", "security_ground_truth*"]
+
+[tool.setuptools.package-data]
+"security_ground_truth.temporal_security" = ["gumtree_dependencies.json"]

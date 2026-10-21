@@ -1,0 +1,9 @@
+Observed error family,DeepSeek,Gemini
+ConnectionError,1,0
+Explicit campaign stop,63,0
+Gemini MALFORMED_FUNCTION_CALL,0,1
+Gemini blockReason OTHER,0,84
+HTTP 429,32,0
+JSONDecodeError,0,24
+RequestDeadlineExceeded,4,0
+ValueError,1,0

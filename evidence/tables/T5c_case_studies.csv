@@ -1,0 +1,5 @@
+Case,Observed evidence-to-edit mechanism,Outcome and attribution limit
+RSA,Sibling decrypt rejects wrong-length ciphertext; verify omitted an analogous signature-length guard. C3 cites that asymmetry and adds the length check.,C0 S=0; C3 S=1. Mechanism-consistent development success; no recorded rationale reference is needed for this trace.
+LangChain,URL restriction compared netloc but not scheme. C3 adds scheme equality; its assessment mentions the temporal omission and invariant cue.,C0 S=0; C3 S=1. Cues and history co-occur; the trace does not isolate a rationale effect.
+Wagtail label,C3 suspects intermediate label HTML and benign rationale; consumer evidence remains inconclusive. The gate prevents an edit and retains a no-op.,"C0 S=1; C3 S=1. Preservation by abstention, not a correct model refutation. v6 and v8 C3 double-escape and fail the output contract."
+Django strip_tags,"Rationale favors automatic character-reference conversion; C3 diagnoses entity loss and changes parser conversion/handlers, later appending semicolons.","C0 S=0; C3 S=0. Partial rationale/code mismatch diagnosis, incomplete preservation behavior; not a successful repair."

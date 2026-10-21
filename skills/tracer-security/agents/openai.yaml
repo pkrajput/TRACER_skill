@@ -1,0 +1,4 @@
+interface:
+  display_name: "TRACER Security"
+  short_description: "Audit SAST alerts with code evolution and bounded checks"
+  default_prompt: "Use TRACER to investigate security-relevant code changes, verify uncertain findings, and preserve the repair evidence."

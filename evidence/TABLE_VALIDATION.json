@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "58 source hashes unchanged",
+    "Both ledgers unchanged and STOP files present",
+    "29 paired CSV/LaTeX panels have matching dimensions and balanced table environments",
+    "245 local artifact links resolve",
+    "All matched arm memberships and conversion/regression identities reconcile",
+    "All nested funnels reconcile",
+    "C3 gap populations equal matched S1 minus S2"
+  ],
+  "tex_compiler": null,
+  "pdf_compiled": false,
+  "tests_passed": 19,
+  "test_command": "python3 -m unittest security_ground_truth.temporal_security.test_paper_evidence security_ground_truth.temporal_security.test_v12_gap_audit security_ground_truth.temporal_security.test_v12_funnel_audit"
+}

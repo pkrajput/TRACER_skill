@@ -1,0 +1,9 @@
+Indicator,DeepSeek / 72,Gemini / 129
+S1 without S2,72,129
+Positive support/edit attempt rejected,10,5
+Accepted refutation,48,98
+Accepted inconclusive,56,25
+Turn-limit ending,40,3
+Normal finish without support,29,112
+Repair error / stop,3,14
+Baseline FuncPass/SecFail,53,100

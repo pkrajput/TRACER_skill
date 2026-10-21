@@ -1,0 +1,50 @@
+{
+  "version": "3.0.0",
+  "artifacts": [
+    {
+      "filename": "core-3.0.0.jar",
+      "sha256": "4c8083c4eb87edf630ed522f1afa6ffe9aaa1dfa2c683bb365d0411a8a916799",
+      "url": "https://repo.maven.apache.org/maven2/com/github/gumtreediff/core/3.0.0/core-3.0.0.jar"
+    },
+    {
+      "filename": "classindex-3.10.jar",
+      "sha256": "fde4ea93496e638af2522482ac5d289ed7c7741d5e9930b029100ee620caf5d2",
+      "url": "https://repo.maven.apache.org/maven2/org/atteo/classindex/classindex/3.10/classindex-3.10.jar"
+    },
+    {
+      "filename": "simmetrics-core-3.2.3.jar",
+      "sha256": "7be884605021172482c2bfda53907dbc8db4f6e8205bd05378084363f3a7d4ed",
+      "url": "https://repo.maven.apache.org/maven2/com/github/mpkorstanje/simmetrics-core/3.2.3/simmetrics-core-3.2.3.jar"
+    },
+    {
+      "filename": "fastutil-8.3.1.jar",
+      "sha256": "1ee5da1ebfdc86ab9574be3cc290769f319df901ae95932a118889b7c63636b9",
+      "url": "https://repo.maven.apache.org/maven2/it/unimi/dsi/fastutil/8.3.1/fastutil-8.3.1.jar"
+    },
+    {
+      "filename": "gson-2.8.2.jar",
+      "sha256": "b7134929f7cc7c04021ec1cc27ef63ab907e410cf0588e397b8851181eb91092",
+      "url": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.2/gson-2.8.2.jar"
+    },
+    {
+      "filename": "jgrapht-core-1.5.1.jar",
+      "sha256": "a4d810cb63e0a77a753d147094fea9dd42e82cfc57aa289f9f85229f26043bb4",
+      "url": "https://repo.maven.apache.org/maven2/org/jgrapht/jgrapht-core/1.5.1/jgrapht-core-1.5.1.jar"
+    },
+    {
+      "filename": "jheaps-0.13.jar",
+      "sha256": "63414290c3497f8ac0f102209207088dec46fd4747e0f56a26c69308e85c6415",
+      "url": "https://repo.maven.apache.org/maven2/org/jheaps/jheaps/0.13/jheaps-0.13.jar"
+    },
+    {
+      "filename": "guava-18.0.jar",
+      "sha256": "d664fbfc03d2e5ce9cab2a44fb01f1d0bf9dfebeccc1a473b1f9ea31f79f6f99",
+      "url": "https://repo.maven.apache.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar"
+    },
+    {
+      "filename": "commons-codec-1.10.jar",
+      "sha256": "4241dfa94e711d435f29a4604a3e2de5c4aa3c165e23bd066be6fc1fc4309569",
+      "url": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar"
+    }
+  ]
+}

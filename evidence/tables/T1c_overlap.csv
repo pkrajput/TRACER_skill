@@ -1,0 +1,8 @@
+Cohort,N,Alert file,Alert symbol,Flow file,Flow symbol,Plan symbol,Body preload
+All admitted,387,228,52,238,63,366,329
+Published SecFail,291,155,41,165,50,281,261
+Published SecPass,96,73,11,73,13,85,68
+Named reference target,379,227,52,237,63,366,329
+Named target + published SecFail,289,155,41,165,50,281,261
+Verified admission SecFail,246,142,37,152,45,237,221
+Verified admission SecPass,59,39,7,39,7,53,46

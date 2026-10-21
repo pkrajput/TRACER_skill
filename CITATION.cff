@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite this software artifact and the associated paper when available."
+title: "TRACER Security Skill"
+type: software
+version: 0.1.0
+date-released: '2026-10-21'
+repository-code: "https://github.com/pkrajput/ghost_code_artifact"
+license: Apache-2.0
+authors:
+  - family-names: Rajput
+    given-names: Prateek
+    affiliation: University of Luxembourg
+  - family-names: Khan
+    given-names: Shahzeb
+    affiliation: Nostrum Biodiscovery
+  - family-names: Klein
+    given-names: Jacques
+    affiliation: University of Luxembourg
+  - family-names: Bissyandé
+    given-names: Tegawendé F.
+    affiliation: University of Luxembourg

@@ -1,0 +1,9 @@
+Investigator,Arm,N,Base F/S,Final F,Final S,New S,Lost S
+deepseek,C0,172,169/40,168,41,2,1
+deepseek,C1,172,169/40,169,42,2,0
+deepseek,C2,172,169/40,169,44,4,0
+deepseek,C3,172,169/40,169,42,2,0
+gemini,C0,172,169/40,169,41,1,0
+gemini,C1,172,169/40,169,41,1,0
+gemini,C2,172,169/40,169,44,4,0
+gemini,C3,172,169/40,169,43,3,0

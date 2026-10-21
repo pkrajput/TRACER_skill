@@ -1,0 +1,320 @@
+{
+  "description": "Copied implementation files retain their research-workspace bytes. Packaging and portable wrappers are separate additions.",
+  "research_git_head": "3915d30edaf2dd551b85b20033a29a525294af95",
+  "research_workspace_had_uncommitted_experiment_fixes": true,
+  "copied_python_sources": [
+    {
+      "path": "security_ground_truth/repair_check/evaluate.py",
+      "sha256": "83efaf6320a50ffdfa4ee691419e3c34dc0f0d3befe098719d1590cc4a22aa75"
+    },
+    {
+      "path": "security_ground_truth/repair_check/google_native.py",
+      "sha256": "d82aec1138473831dcfc8c21a5f0c67202b1efeda9d4309d54c62e9203a528be"
+    },
+    {
+      "path": "security_ground_truth/repair_check/official_score.py",
+      "sha256": "96b3be789309ac984d7583dd66948c532db7ed4cd51fe807ae5f39280ab06acf"
+    },
+    {
+      "path": "security_ground_truth/repair_check/repair.py",
+      "sha256": "44d37e282bdb0ebb38687a82266d0760d6a186b8a332f63c3e2f0153fc1070a3"
+    },
+    {
+      "path": "security_ground_truth/runtime/alert_identity.py",
+      "sha256": "7eafb29001c08a26a43d1fbaa1a65d1fe4f971c853f3b71ae306098268a9ab26"
+    },
+    {
+      "path": "security_ground_truth/runtime/common.py",
+      "sha256": "d2c9c27e7e504eba64d9629f78351b9db7c822e19e387e1759ffa68b630272da"
+    },
+    {
+      "path": "security_ground_truth/runtime/context_budget.py",
+      "sha256": "f60c2b601032ce34dac3daf6c9825294d714c7f4da4b3a88f0952749db242be1"
+    },
+    {
+      "path": "security_ground_truth/runtime/dynamic_probe.py",
+      "sha256": "cf8b77c2fb44f25ae50587db3e3a4262e597dbd8b1471a516e70b890867d513f"
+    },
+    {
+      "path": "security_ground_truth/runtime/gemini_gateway.py",
+      "sha256": "414520d9514f6d4ba680bba16c89faea7ad1cc5897a082c1c1c623e8cfa111ac"
+    },
+    {
+      "path": "security_ground_truth/runtime/git_history/query.py",
+      "sha256": "2ffb31a3123e10d771301b72cdebb29225ba64a2cf54b3c891e996d1bf2d9f34"
+    },
+    {
+      "path": "security_ground_truth/runtime/git_history/test_query.py",
+      "sha256": "9a366c40dfbfb0687fac7dd6ae22607bd9c5a43f6fef886f887d62f40b49dde0"
+    },
+    {
+      "path": "security_ground_truth/runtime/history/adapter.py",
+      "sha256": "817de02205f6b2c556a9b38d9cda7ca20754693a72a3e1d3d59c400bbfdcb596"
+    },
+    {
+      "path": "security_ground_truth/runtime/history/query.py",
+      "sha256": "6269244d6c96a72867288eec7d6910396b1c79814a01dab8514bded6416041c5"
+    },
+    {
+      "path": "security_ground_truth/runtime/history/test_adapter.py",
+      "sha256": "168634c57f2b0cb755241d48a897295cf88c71558d12b809789efe602cbc98ff"
+    },
+    {
+      "path": "security_ground_truth/runtime/history/test_query.py",
+      "sha256": "a25f899998af12ed09038f7cc48d6f7e4388183f769cd242b8e4623119d85821"
+    },
+    {
+      "path": "security_ground_truth/runtime/http_deadline.py",
+      "sha256": "795c943df526eb4cc6db86bbc44fda45f35c9eb7ff90e638e807243ef910d9b1"
+    },
+    {
+      "path": "security_ground_truth/runtime/investigation.py",
+      "sha256": "307e6e795fed92bb55e91e3f95b8428b61576538ebadfefb6f2404a2f34e63e1"
+    },
+    {
+      "path": "security_ground_truth/runtime/method_fidelity.py",
+      "sha256": "e6e6b8e2106432f95384f798ff7d20f9fac57e720f5967eb089b5b77c250b7d5"
+    },
+    {
+      "path": "security_ground_truth/runtime/model_gateway.py",
+      "sha256": "6b7eaff9364d32890878cb05be5d0d6cbb0a985258552ec328d0fb03b3f664a0"
+    },
+    {
+      "path": "security_ground_truth/runtime/rate_limit_retry.py",
+      "sha256": "94c5d3c06f83f7abc8e552d6ed056507a331309c407e6d5068e714f0c99c5cef"
+    },
+    {
+      "path": "security_ground_truth/runtime/scanners.py",
+      "sha256": "93ca2b30fa937ade5e5422ded10b941984fea6a9ab553d8749a5744c189d2f84"
+    },
+    {
+      "path": "security_ground_truth/runtime/test_results.py",
+      "sha256": "b04e4e674dad6973b6708b927394d785879918a9394d7338a7164957a515964c"
+    },
+    {
+      "path": "security_ground_truth/runtime/triage.py",
+      "sha256": "515dc7d4fc603fcc102eb6c385e2b1946762a316ed398018740d7b9f72ab7d05"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/action_recovery.py",
+      "sha256": "4be260693b42516fa92d7f4b9eb9c83aa316e3164d6f783bddc05b81c35f80ab"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/campaign.py",
+      "sha256": "834665200ef8d20e2fab10f138f45d80c6f14154b8d3f0830290a90adcf77b34"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/change_audit.py",
+      "sha256": "6a215054691f683e203e229de05b0a7b9c53b331b53b365a80c468aa1326cc6a"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/change_symmetry.py",
+      "sha256": "43debc6c2afc9c30ccffd93b1fc43cea63c9d7036cac6ba35790169104f0a100"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/citations.py",
+      "sha256": "ef4790c962a417d4faebaf2aa88573d11f7d3ff4f84a252b45a6b2a4456f783f"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/cli.py",
+      "sha256": "b3080e5e2b981bbf3732f0193c46453dc65429aa9e2b16aabd0d9d006815d853"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/dev_pilot_report.py",
+      "sha256": "436c45689ca55e8565eaa349bbb4a7171d87f1ccde15a5d853c1da3695cbc9b1"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/edit_validation.py",
+      "sha256": "7b208fc3f734003060ce04659f72a737f7716ae637dc2b24e62e0446ee5aa834"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/engine.py",
+      "sha256": "3310c073f5af9d542a54fa6702c0979fac5f1c76bf775d5b3516e9765d524f80"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/final_validation.py",
+      "sha256": "64d732ccbd4c4747cdee0dfff40f556ec58770bfa0f9b6d7b29a1b0166bc315a"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/flow_context.py",
+      "sha256": "6b090b052e895d025ec4bae65d0ed8d8e54d823035557913f69f6a691afa205f"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/gumtree.py",
+      "sha256": "c2c97c680c2362b44aa5852a6decbe21182c918076c5a20f21d00a9aa3db7b58"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/gumtree_install.py",
+      "sha256": "99cfe7b29a2d251a74428bedba7b7550bd1adde88af8cb382312e3222dd95b10"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/history.py",
+      "sha256": "542e357126d3d0c29a14e3bfb441d13b0b36b9dc365c39728969ac526ceb2965"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/inputs.py",
+      "sha256": "e23906660910b3f4000aa1ce65cf6b504d1a7c8673bfa974b1f323d864ce6052"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/openrouter_repair.py",
+      "sha256": "9c7a612f798175ed1d4d25ad6d6a129119661dcb5a09133709769f33cd76143f"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/planner.py",
+      "sha256": "670eb6821af420bb85e66035ca1672d2f953c4b99d9b3f4ff45745ba3777c0bb"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/postmortem_v6.py",
+      "sha256": "a06480bf96ceaecbbffab0ee40c7d06e49161a1ed8cf25398c2a0fe851ceeb38"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/prepare_v12.py",
+      "sha256": "0b08bae8621a12abce099c990ad00031bf08fd3bf0543c867b0783625bea7ceb"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/rationale.py",
+      "sha256": "6c6729a88760daa8f6db19e63e370325fce442cd88f71e216c9169fdfdb69d21"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/sandbox.py",
+      "sha256": "cfc2ed04fac5857465078dd15b4c827880194cfb79bb4e80c0a50a0d772ad66e"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/score.py",
+      "sha256": "f486c0e2b838f6dbae40fa70f36c1f503f2a0a65152a6ab5a53ad121bdb49602"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_change_symmetry.py",
+      "sha256": "d742f0956cf29517d4e5784c3e7170529f05d14f12d9234f38635215a75c5061"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_citations.py",
+      "sha256": "e23f82ffdbc348adaf2e7cf17d696ff093f38b308e73bb1e1d2c155b5d73971e"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_engine.py",
+      "sha256": "128da8f25a5a61faabcad1314131af79af8243ba9442e42dc4c26776415d475e"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_final_validation.py",
+      "sha256": "26b0afb7912ef8581b2ac754693e5082955e600c678b661345c8fafc04bee64e"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_flow_context.py",
+      "sha256": "ff599f85f06e705ff5d95d0b5c5231dae22454963589cb1856b242eb182a6590"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_gumtree.py",
+      "sha256": "bf148b70d3f339aa3ce2232f5a174127f9b8279b38e9af6850e06e07141671ea"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_history.py",
+      "sha256": "a45c640b5d768b84f428043418e121f7d7373cb0035a73cd0f6602207cfced02"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_planner.py",
+      "sha256": "7af43a8cd52a3ef1296918b43d21d3afbf0c833b028ddcbe950b67990f3cc4a9"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_rationale.py",
+      "sha256": "a02d8ecaea9f2f937c24dc9e48739131e13376f9c3dfed5aeb960933bdd6d649"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_unseeded_gate.py",
+      "sha256": "cebe3b414b1b797269a32fc0aa35d80016345a77da4547f24447fbd3e4bf236d"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_v10_protocol.py",
+      "sha256": "62c44819dbad6f0434970b3e7f79205ae9e4d8c7a16dd80acb73921bb4a6e023"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_v11_cards.py",
+      "sha256": "68416b89a45fae68d274b9d79f1e83a060ebffed3f23428c74847371abb7862f"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_v11_protocol.py",
+      "sha256": "872bd39d73f1d7984eca568c82a766c41b41bdd0b2ff886a45e8dd4a44cfe029"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/test_v12.py",
+      "sha256": "a2187d2078d869231e65fdc61e4155a42fd0d629d7e245d105fd2897637d871d"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/unseeded_gate.py",
+      "sha256": "bc7ffcf0dfb3e4209e1f980d98cadf50c719c1462f85ee9297a4e1130859e75a"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v10_cards.py",
+      "sha256": "e657e1c8e9e58bcd613f669b7402832791a8dde231967133ceace29e923adb77"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v10_inputs.py",
+      "sha256": "8eda38a06b16527ac32c830dd597eacbbedf2dd57372f73d802f468e3222b64f"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v10_protocol.py",
+      "sha256": "a2cc04d2ba868f637f1e377c5523b56344663630fbe32b233d5d1d6cd72b4693"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v11_cards.py",
+      "sha256": "97963b767fa1097b91a7383aaf7ce06ba3da600e7ec7026003c0515e268b6cab"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v11_dev_report.py",
+      "sha256": "d5ae64cc938e75dbd44191d08d572766958f0845d32c3aaa0c8ce8fd2cc1cbf8"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v11_inputs.py",
+      "sha256": "7d8f03bd74f8f5a8dd7ab4e202f1add20aadca3319cc057841aa5e7403fe62ae"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v11_integrity.py",
+      "sha256": "11a7a739073dabb747a977f62cbb0bd4aaa46445e353da155617d1afed1f17c1"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v11_protocol.py",
+      "sha256": "9058ffc90e85eb97c078c173c54aa76b57011d8336ad500e0c948669901609a1"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_campaign.py",
+      "sha256": "0b0127924d6f2cc8a03ced44ce0cdca3b8167ae0af7ccbb252aa3bac4c8939fe"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_cards.py",
+      "sha256": "16d9190d09308e6d4ab435f9dcfeba06765a86d1ed5c1b0d660f8b4f109b4882"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_context.py",
+      "sha256": "d334fb5bd5c637bdbd8491e30e5ce12fd23bedacc13f110af82befc5715790bf"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_contracts.py",
+      "sha256": "c611eb05614f537445fd528c7e433b7cbaf6abea56baf5fa2800dcfc9bddfa5c"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_inputs.py",
+      "sha256": "d3c850b0d1d430d10284510ab1e38b9232dd638d16b8b597ddc7dd55a699dcd9"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_protocol.py",
+      "sha256": "50dac5723301f3c8908748b177c37c5374a7706dec245bce17d919b3bf3d81f8"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v12_report.py",
+      "sha256": "5be284d9ee5cc97025bd584adf402f411e0f79e25c0108aa64982e6a10b97cd0"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v8_dev_report.py",
+      "sha256": "eab6a6110eb9742227450bf29e5466d2914330b76b1b7348e22e22b871003b93"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v9_cards.py",
+      "sha256": "b976d63b96e8e3825dfcb42d9842f25de94f31160ba4a22b36bd05ba611172fa"
+    },
+    {
+      "path": "security_ground_truth/temporal_security/v9_protocol.py",
+      "sha256": "3372f80bf7471fe9caf2de5b9759e3de238ff363991bd331c44bf770675c85b0"
+    }
+  ],
+  "upstream_artifact_commit": "3fe2b3230991f771b92825ecffd312a68fd0713e"
+}

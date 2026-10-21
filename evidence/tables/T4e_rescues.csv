@@ -1,0 +1,10 @@
+Investigator/arm,Eligible,FuncPass,FuncFail,Func unknown,SecPass,New SecPass
+deepseek/C0,29,17,8,4,4,0
+deepseek/C1,13,7,4,2,2,1
+deepseek/C2,8,4,1,3,2,0
+deepseek/C3,15,10,3,2,1,0
+gemini/C0,2,1,1,0,0,0
+gemini/C1,1,0,1,0,0,0
+gemini/C2,1,0,0,1,0,0
+gemini/C3,1,0,0,1,0,0
+Total,70,39,18,13,9,1

@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-21",
+  "python": "3.10",
+  "jsonschema": "4.26.0",
+  "openjdk": "11.0.32.1",
+  "core_tests": {
+    "passed": 127,
+    "failed": 0,
+    "socket_network_disabled": true
+  },
+  "gumtree_tests": {
+    "passed": 9,
+    "failed": 0
+  },
+  "portable_cli_smoke": "passed",
+  "skill_frontmatter": "passed",
+  "wheel_install_outside_checkout": "passed",
+  "gumtree_packaged_lock": "passed",
+  "copied_source_hashes_verified": 78,
+  "outcome_rows": 3096,
+  "shared_attempts": 345,
+  "recomputed_shared_generator_stratum_and_full_funnel": "passed",
+  "credential_pattern_matches": 0,
+  "model_calls": 0,
+  "new_evaluations": 0,
+  "verification_scope": "Local package and archived-outcome checks. CI configured but not yet run on GitHub."
+}

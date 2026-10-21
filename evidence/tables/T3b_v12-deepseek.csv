@@ -1,0 +1,25 @@
+Stratum,Arm,N,Base F/S,Final F,Final S,New S,Lost S
+SAST-seeded,C0,85,84/21,84,22,1,0
+SAST-seeded,C1,85,84/21,84,21,0,0
+SAST-seeded,C2,85,84/21,84,23,2,0
+SAST-seeded,C3,85,84/21,84,21,0,0
+Unseeded,C0,87,85/19,84,19,1,1
+Unseeded,C1,87,85/19,85,21,2,0
+Unseeded,C2,87,85/19,85,21,2,0
+Unseeded,C3,87,85/19,85,21,2,0
+No primary reference-symbol overlap,C0,146,143/33,142,33,1,1
+No primary reference-symbol overlap,C1,146,143/33,143,35,2,0
+No primary reference-symbol overlap,C2,146,143/33,143,36,3,0
+No primary reference-symbol overlap,C3,146,143/33,143,35,2,0
+Reference-symbol mapping unavailable,C0,3,3/2,3,2,0,0
+Reference-symbol mapping unavailable,C1,3,3/2,3,2,0,0
+Reference-symbol mapping unavailable,C2,3,3/2,3,2,0,0
+Reference-symbol mapping unavailable,C3,3,3/2,3,2,0,0
+Previously protected,C0,53,52/11,52,12,1,0
+Previously protected,C1,53,52/11,52,11,0,0
+Previously protected,C2,53,52/11,52,12,1,0
+Previously protected,C3,53,52/11,52,11,0,0
+Development exposed,C0,119,117/29,116,29,1,1
+Development exposed,C1,119,117/29,117,31,2,0
+Development exposed,C2,119,117/29,117,32,3,0
+Development exposed,C3,119,117/29,117,31,2,0

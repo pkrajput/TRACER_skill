@@ -1,181 +1,111 @@
-<div align="center">
+# TRACER Security
 
-# TRACER & Ghost-Code Analysis
+**Trace-based Runtime Analysis for Continuous Evolution and Release**
 
-**Keep the story behind the code. Understand what an agent leaves behind.**
+This is the skill and implementation artifact for [*Securing Agent-Generated Code
+Through Development History*](docs/paper.pdf), with [manuscript sources](https://github.com/pkrajput/ghost_code).
+TRACER connects current Python symbols and SAST
+findings to recorded structural changes and separately captured development
+rationale. A host coding agent investigates and repairs supported defects, then
+preserves the repair invariant and executable checks for later maintenance.
 
-Trace-based Runtime Analysis for Code Evolution Review
+## Install and use
 
-[Quick start](#quick-start) · [TRACER](#what-is-tracer) · [Ghost-code analysis](#what-is-ghost-code-analysis)
-
-Python 3.10+ · Apache-2.0 · Research prototype
-
-</div>
-
-Coding agents leave more than a final patch: intermediate implementations,
-editing scripts, commands, observations, and explanations. This repository
-provides tools to preserve that history and examine the artifacts that survive.
-
-**TRACER records and connects development history. Ghost-code analysis is one
-application of that history.** You can use either component independently.
-
-![TRACER links recorded reasoning, actions, and code revisions for review and reuse; the ghost-script study follows retained helpers through their histories.](docs/assets/tracer_ghost_script_overview-1.png)
-
-*The upper panel shows the broader TRACER architecture. The lower panel shows
-the ghost-script case study, including separate deletion evidence and human
-review of selected interpretations.*
-
-## Choose your starting point
-
-| I want to… | Start here | What I get |
-|---|---|---|
-| Understand a code change and its earlier attempts | [TRACER](tracer/README.md) | Recorded steps, file and symbol history, and a decision ledger |
-| Inspect a leftover Python editing script | [Ghost-code analysis](ghost_analysis/README.md) | Possible source-writing behavior and inspectable AST evidence |
-| Follow a helper through a recorded session | [Ghost-code analysis](ghost_analysis/README.md) | Invocation and target-change associations; embedded implementation comparisons |
-| Capture mini-SWE-agent workspace changes | [Recording connector](connectors/mini_swe_agent/README.md) | Actions, model records, and before/after workspace snapshots |
-
-## Quick start
-
-Use **Python 3.10+**. The analysis demo uses only the Python standard library;
-the TRACER demo also needs **Git**. Neither demo needs an API key, Docker, a GPU,
-or the study archives. Run the commands below from the repository root.
-
-```sh
-unzip tracer-ghost-code-anonymous.zip
-cd ghost_code_artifact
-```
-
-### 1. Try ghost-script analysis
-
-```sh
-python3 -m ghost_analysis demo --out outputs/ghost-demo
-```
-
-The demo builds a small synthetic development history and runs the analysis.
-It demonstrates the difference between a script that can write source and a
-helper whose use is corroborated by recorded changes. The example is synthetic;
-it is not a reproduction of the paper's results.
-
-```text
-Static candidates: 2; history-supported helpers: 1.
-Task redundancy: unknown for every file. The demo includes no deletion evidence.
-```
-
-Inspect the reports in `outputs/ghost-demo/`. Use a fresh output directory when
-rerunning the demo.
-
-For your own Python script:
-
-```sh
-python3 -m ghost_analysis scan ghost_analysis/examples/writer.py
-```
-
-Replace the example path with your own script or directory. This inspects source
-without executing the script. A scan can identify a
-**candidate**; history and deletion evidence answer different questions.
-See the [analysis guide](ghost_analysis/README.md) for output fields, supported
-patterns, and archive-based analysis.
-
-### 2. Try TRACER
+Python 3.10 or newer and Git are required. The evidence helpers need no model
+credential and do not execute the analyzed source. GumTree history additionally
+requires a JDK with `java` and `javac` available, tested with OpenJDK 11.
 
 ```sh
 python3 -m venv .venv
 . .venv/bin/activate
-python -m pip install -e ./tracer
-python tracer/examples/quickstart.py
+python -m pip install -e '.[test]'
+python -m tracer_skill.cli --help
+python scripts/smoke.py
+python scripts/check_core.py
+python scripts/recompute_results.py
 ```
 
-The example creates an isolated temporary Git repository, records an initial
-attempt and a revision, and prints their history and decision ledger. It also
-prints the example repository path so you can continue exploring it.
+Make `skills/tracer-security` discoverable by your coding agent, or explicitly
+give it that folder's `SKILL.md`. Keep this package installed in the environment
+from which the agent runs helpers. For an agent with a local skills directory,
+copy that folder there or symlink it to this checkout. This is a portable skill,
+not a provider-specific model service. The host supplies its editing, execution,
+credentials, and budget controls.
+
+The installation does not start a study campaign. The default commands make
+zero model calls. Research engine and provider-adapter sources are included for
+inspection and use only through an explicitly configured host.
+
+## Prepare review evidence
+
+Create a diff against the intended base and export scanner findings on the
+current source. The scanner binaries and rule packs are installed separately.
 
 ```sh
-codegraph-trace --help
+tracer-security index --source /path/to/repo/app.py --path app.py --output local-output/index.json
+tracer-security plan --source /path/to/repo --patch submitted.patch --semgrep semgrep.json --codeql codeql.sarif --output local-output/plan.json
 ```
 
-`codegraph-trace` is the recorder's command name; `codegraph_trace` is its Python
-package name. The [TRACER guide](tracer/README.md) covers recording your own
-session, querying history, and optional integrations.
+Scanner inputs are optional. The plan includes changed production symbols even
+without warnings. Outputs are immutable, so each invocation needs a fresh path.
+The historical study used Semgrep CE 1.101.0 and CodeQL 2.20.0, Python query pack
+1.3.4, with the security-extended suite. New scanner versions create a new
+configuration and are not an exact replication of the study.
 
-## What is TRACER?
+Install the hash-pinned GumTree 3.0.0 dependencies once from Maven Central.
 
-**TRACER is the development-history infrastructure.** It connects a recorded
-action and its available explanation to the code versions around that action.
-Its core supports:
-
-- **Step recording:** preserve prompts, supplied reasoning, actions, and observations.
-- **Version history:** retain intermediate attempts using Git-backed snapshots.
-- **File and symbol links:** connect changes to the code they affect.
-- **A decision ledger:** derive whether introduced code survives, changes, or disappears.
-- **Review and querying:** inspect earlier versions and the context recorded with them.
-
-The ledger describes code evolution. Its labels are not correctness judgments.
-Recorded explanations retain their source; TRACER does not infer unavailable
-reasoning or treat an agent's explanation as proof of intent.
-
-The core includes an OpenHands adapter and manual recording interfaces. The
-mini-SWE-agent [study connector](connectors/mini_swe_agent/README.md) captures
-Git-anchored workspace snapshots in its own archive format. That connector
-supports the analysis in this repository; its outputs are not automatically
-imported into the core decision ledger.
-
-## What is ghost-code analysis?
-
-**This release studies retained Python source-writing helpers, called ghost
-scripts when separate task-oracle evidence establishes redundancy.** An agent
-might create `patch.py` to rewrite a product module, execute it, refine the
-product further, and leave `patch.py` in the final workspace. The helper can
-preserve either the final implementation or an earlier attempt.
-
-The analysis separates three questions:
-
-| Question | Evidence | What it establishes |
-|---|---|---|
-| Could this helper write Python source? | Bounded AST analysis | A source-writing candidate |
-| Was the helper used during construction? | Invocation, helper version, and target changes in recorded actions | A history-supported construction association |
-| Is it redundant for this completed task? | Valid, complete outcomes before and after deletion under the same fixed oracle | Task-level redundancy |
-
-A further analysis parses definitions embedded in string literals and compares
-them with product revisions. It distinguishes **current**, **superseded**, and
-**unlinked** implementations. “Unlinked” means no complete correspondence was
-established; it does not mean useless.
-
-The operational definition of a ghost script is:
-
-```text
-outcome(fixed_oracle, final_workspace without helper)
-    == outcome(fixed_oracle, final_workspace)
+```sh
+python -m security_ground_truth.temporal_security.gumtree_install
+tracer-security describe-change before.py after.py --path app.py --event-id commit-or-edit-id --symbol Parser.load --output local-output/change.json
 ```
 
-Both evaluations must be valid, complete, and passing under the same fixed
-oracle. A helper may have been useful
-during development and still be redundant at the endpoint. Passing these checks
-does not establish its value for future tasks.
+For ordinary Git repositories, use a bare, non-shallow cache, a full commit SHA,
+and a target list such as `[{"path":"app.py","symbol":"Parser.load"}]`.
 
-The static commands inspect evidence and produce reports. They do not delete
-files or execute captured helpers. Static findings alone do not establish
-task-level redundancy.
-
-## Repository map
-
-```text
-ghost_code_artifact/
-├── tracer/                       TRACER recorder, CLI, integrations, and demo
-├── ghost_analysis/               AST/history analysis, demo, and study scripts
-├── connectors/mini_swe_agent/     Study recording connector and capture format
-└── docs/
-    ├── assets/                   Architecture figure
-    └── research/                 Study scope and reproduction requirements
+```sh
+tracer-security prepare-history --repo-cache /path/to/repo.git --cutoff FULL_COMMIT_SHA --targets targets.json --repository-kind ordinary --output local-output/git-history.json
+tracer-security prepare-agent --messages messages.json --targets targets.json --source /path/to/repo --output local-output/agent-history.json
 ```
 
-## Contributing and attribution
+`prepare-agent --rationale-only` works without GumTree. It accepts compatible
+ReAct message lists and preserves observed prose rather than inventing missing
+reasoning. Git and agent histories remain separate. The benchmark's withheld
+pre-reference implementations must not be introduced as investigator evidence.
 
-Bug reports are most useful with a small synthetic script or recording that
-shows the problem. See [CONTRIBUTING.md](CONTRIBUTING.md) for development checks.
-Please avoid including credentials or private session content in reports.
+## What is included
 
-TRACER builds on structural-indexing ideas and integration with
-`codebase-memory-mcp`; the capture connector integrates with mini-SWE-agent.
-See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for source provenance and
-attribution. This project is licensed under [Apache-2.0](LICENSE). Paper citation
-metadata will be added when finalized.
+- `skills/tracer-security` provides the host-agent workflow and maintenance contract.
+- `tracer_skill` provides portable command wrappers around the studied helpers.
+- `security_ground_truth` preserves the relevant research implementation, including
+  source-bound assessments, context packing, runtime checks, and final validation.
+- `evidence` contains frozen result summaries, per-cell outcomes, source hashes,
+  and manuscript tables. See `evidence/README.md` for populations and limitations.
+- `scripts` provides zero-model-cost smoke checks, regression checks, and result
+  recomputation.
+- `SOURCE_PROVENANCE.json` records the exact copied implementation hashes. The
+  research workspace contained uncommitted fixes, so its Git HEAD alone is not
+  used as the implementation identity.
+
+The paper reports 387 admitted attempts, 3,096 recorded investigator cells, and
+345 attempts with complete original and eight-arm candidate outcomes. C0 already
+receives changed-symbol targets. It is not stock SAST alone. C1–C3 also carry
+audit cues, so the comparison does not isolate each channel from those cues.
+
+The portable wrappers expose the existing mechanisms. They are not a new
+benchmark run, and installing the skill alone does not reproduce the measured
+model outcomes. Full regeneration needs the published inputs, project containers,
+scanner packs, a configured provider, and paid inference. Archived-result
+recomputation does not.
+
+## Availability and citation
+
+This release replaces the earlier NIER-focused artifact layout. Its predecessor
+remains in Git history at `3fe2b3230991f771b92825ecffd312a68fd0713e`.
+The repository is currently named `ghost_code_artifact`. A future rename to
+`TRACER_skill` does not change the package or skill names.
+
+See `CITATION.cff`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, and
+`docs/ARCHIVAL_RELEASE.md`. No DOI or artifact badge is claimed before deposit
+and evaluation. Raw investigator trajectories, complete evaluator logs, and
+container exports require a separate archival release. They are not silently
+substituted by the compact result tables.

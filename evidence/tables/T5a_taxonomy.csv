@@ -1,0 +1,4 @@
+Category,Cases,Interpretation
+wrong_property,4,Edit addresses a different concern from the tested vulnerability.
+right_class_incomplete,9,"Relevant broad class, but missing bypass, input-domain, lifecycle or other required behavior."
+right_condition_wrong_behavior,2,Relevant trigger recognized; failure-handling behavior violates the test.

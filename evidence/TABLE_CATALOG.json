@@ -1,0 +1,205 @@
+[
+  {
+    "id": "T0_models",
+    "title": "Investigator configurations recorded by the campaigns",
+    "rows": 2,
+    "columns": 4,
+    "evidence": "[E16](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/config.json) (`/model; /provider; /temperature`); [E17](/raid/prateek/ghost_code/security_experiments/20261019/gemini_v12_r2/config.json) (`/model; /provider; /temperature`)"
+  },
+  {
+    "id": "T1a_admission",
+    "title": "T1a. Per-generator source inventory and admission",
+    "rows": 8,
+    "columns": 6,
+    "evidence": "[E01](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/cohort.json) (`/records; /models`); [E02](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/experiment/ready.json) (`/`); [E03](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/prep/results.json) (`/`); [E13](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/prelaunch_verification.json) (`/source_only_exclusions; /cases`)"
+  },
+  {
+    "id": "T1b_baselines",
+    "title": "T1b. Original admission baselines on the 387 v12-admitted attempts",
+    "rows": 8,
+    "columns": 7,
+    "evidence": "[E02](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/experiment/ready.json) (`/`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E18](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/cases.json) (`/`)"
+  },
+  {
+    "id": "T1c_overlap",
+    "title": "T1c. Scanner warning overlap versus bounded review-plan inclusion",
+    "rows": 7,
+    "columns": 8,
+    "evidence": "[E09](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/SCANNER_AND_C0_INPUTS.json) (`/`); [E11](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/references.json) (`/cases`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`)"
+  },
+  {
+    "id": "T1d_c0_context",
+    "title": "T1d. Other sources of target knowledge when no primary scanner symbol overlaps",
+    "rows": 4,
+    "columns": 2,
+    "evidence": "[E09](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/SCANNER_AND_C0_INPUTS.json) (`/`); [E23](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/frozen_code/security_ground_truth/temporal_security/planner.py) (`lines 196\u2013282`); [E25](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/frozen_code/security_ground_truth/temporal_security/inputs.py) (`prepare_case_input()`)"
+  },
+  {
+    "id": "T2a_progress",
+    "title": "T2a. Exactly matched ten-case outcomes",
+    "rows": 14,
+    "columns": 7,
+    "evidence": "[E06](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V11_DEV_COMPARISON.json) (`/rows; /case_keys`); [E07](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/qualification_gate.json) (`/`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T2b_friction",
+    "title": "T2b. Friction on those same ten cases",
+    "rows": 14,
+    "columns": 6,
+    "evidence": "[E06](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V11_DEV_COMPARISON.json) (`/rows; /case_keys`); [E07](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/qualification_gate.json) (`/`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T2c_changes",
+    "title": "T2c. Engineering changes and their observed limits",
+    "rows": 6,
+    "columns": 3,
+    "evidence": "[E26](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/V11_DEV_COMPARISON.md) (`Diagnostic conclusion`); [E27](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/V8_DEV_COMPARISON.md) (`Wagtail regression; Dynamic-control qualification`); [E28](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/V10_DEV_COMPARISON.md) (`Diagnostic conclusion; mechanisms`); [E29](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/V7_DEV_COMPARISON.md) (`Citation and repeated-error audit`); [E30](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/V9_DEV_COMPARISON.md) (`Diagnostic conclusion`); [E07](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/qualification_gate.json) (`/`)"
+  },
+  {
+    "id": "T3a_main",
+    "title": "T3a. Paired, four-arm-complete outcomes",
+    "rows": 12,
+    "columns": 8,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3b_v6",
+    "title": "T3b. Strata \u2014 v6",
+    "rows": 24,
+    "columns": 8,
+    "evidence": "[E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E09](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/SCANNER_AND_C0_INPUTS.json) (`/`); [E14](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/DIAGNOSTIC_REPORT.json) (`/known_development_exposure`); [E15](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/preflight/results.json) (`/`)"
+  },
+  {
+    "id": "T3c_v6",
+    "title": "T3c. Matched per-generator results \u2014 v6",
+    "rows": 28,
+    "columns": 8,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3b_v12-deepseek",
+    "title": "T3b. Strata \u2014 v12-deepseek",
+    "rows": 24,
+    "columns": 8,
+    "evidence": "[E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E09](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/SCANNER_AND_C0_INPUTS.json) (`/`); [E14](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/DIAGNOSTIC_REPORT.json) (`/known_development_exposure`); [E15](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/preflight/results.json) (`/`)"
+  },
+  {
+    "id": "T3c_v12-deepseek",
+    "title": "T3c. Matched per-generator results \u2014 v12-deepseek",
+    "rows": 16,
+    "columns": 8,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3b_v12-gemini",
+    "title": "T3b. Strata \u2014 v12-gemini",
+    "rows": 24,
+    "columns": 8,
+    "evidence": "[E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E09](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/SCANNER_AND_C0_INPUTS.json) (`/`); [E14](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/DIAGNOSTIC_REPORT.json) (`/known_development_exposure`); [E15](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/preflight/results.json) (`/`)"
+  },
+  {
+    "id": "T3c_v12-gemini",
+    "title": "T3c. Matched per-generator results \u2014 v12-gemini",
+    "rows": 20,
+    "columns": 8,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3d_eight_arm",
+    "title": "T3d. Investigator comparison on the exact same 172 eight-arm-complete attempts",
+    "rows": 8,
+    "columns": 8,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3e_contrasts",
+    "title": "T3e. Exploratory paired SecPass differences from C0",
+    "rows": 9,
+    "columns": 7,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T3f_legacy",
+    "title": "T3f. Legacy v6 raw counts \u2014 audit only, not valid headline scores",
+    "rows": 4,
+    "columns": 4,
+    "evidence": "[E04](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/RESULTS.json) (`/rows`); [E05](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V6_POSTMORTEM.json) (`/execution_integrity; /execution_verified_four_arm_strata; /cells`)"
+  },
+  {
+    "id": "T3g_completeness",
+    "title": "T3g. v12 operational inventory, including unequal arm completion",
+    "rows": 8,
+    "columns": 7,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E21](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/FINAL_VERIFICATION.json) (`/`)"
+  },
+  {
+    "id": "T3h_conversion_identity",
+    "title": "T3h. Which matched v12 attempts actually convert?",
+    "rows": 9,
+    "columns": 5,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E14](/raid/prateek/ghost_code/security_experiments/20261017/temporal_security_v2_rationale/diagnostic_audit/report/DIAGNOSTIC_REPORT.json) (`/known_development_exposure`)"
+  },
+  {
+    "id": "T4a_funnel",
+    "title": "T4a. Nested funnel on four-arm-recorded cases",
+    "rows": 8,
+    "columns": 10,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E10](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/CELL_ANALYSIS.json) (`/`); [E19](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/COHORTS.json) (`/`)"
+  },
+  {
+    "id": "T4b_gap_indicators",
+    "title": "T4b. C3 localized-but-unsupported cells: overlapping indicators",
+    "rows": 8,
+    "columns": 3,
+    "evidence": "[E19](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/COHORTS.json) (`/`)"
+  },
+  {
+    "id": "T4c_gap_buckets",
+    "title": "T4c. Exclusive operational buckets for the same gap cells",
+    "rows": 5,
+    "columns": 3,
+    "evidence": "[E19](/raid/prateek/ghost_code/security_experiments/20261019/v12_s1_secpass_gap_audit/COHORTS.json) (`/`)"
+  },
+  {
+    "id": "T4d_discards",
+    "title": "T4d. Nonempty patches discarded to no-ops, all recorded v12 cells",
+    "rows": 6,
+    "columns": 4,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  },
+  {
+    "id": "T4e_rescues",
+    "title": "T4e. Separate counterfactual rescue outcomes",
+    "rows": 9,
+    "columns": 7,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E21](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/FINAL_VERIFICATION.json) (`/`)"
+  },
+  {
+    "id": "T5a_taxonomy",
+    "title": "T5a. Purposive review of 15 retained reference-symbol edits that still fail security",
+    "rows": 3,
+    "columns": 3,
+    "evidence": "[E12](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V12_GAP_REVIEW_ANNOTATIONS.json) (`/rows`)"
+  },
+  {
+    "id": "T5b_reviews",
+    "title": "T5b. Per-case patch versus official assertion review",
+    "rows": 15,
+    "columns": 4,
+    "evidence": "[E12](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V12_GAP_REVIEW_ANNOTATIONS.json) (`/rows`)"
+  },
+  {
+    "id": "T5c_case_studies",
+    "title": "T5c. Four development case studies (v12 DeepSeek)",
+    "rows": 4,
+    "columns": 3,
+    "evidence": "[E06](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V11_DEV_COMPARISON.json) (`/rows; /case_keys`); [E07](/raid/prateek/ghost_code/security_experiments/20261018/temporal_security_v12/qualification_gate.json) (`/`); [E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`); [E20](/home/prateek/.codex/worktrees/39e0/ghost_code/security_ground_truth/temporal_security/postmortem/V11_MECHANISM_REVIEW.json) (`/`)"
+  },
+  {
+    "id": "T5d_errors",
+    "title": "T5d. Exact recorded repair-error families",
+    "rows": 8,
+    "columns": 3,
+    "evidence": "[E08](/raid/prateek/ghost_code/security_experiments/20261019/v12_local_funnel_recovery/RESULTS.json) (`/rows; /rescues; /matched_four_arm`)"
+  }
+]

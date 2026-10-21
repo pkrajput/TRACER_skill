@@ -1,7 +1,7 @@
 TRACER & Ghost-Code Analysis
 Copyright 2026 the TRACER and Ghost-Code Analysis contributors.
 
-This distribution contains research software for recording development history
-and analyzing retained Python source-writing helpers.
+This successor distribution contains the TRACER Security skill and research
+implementation for symbol-linked evidence, security repair, and repair memory.
 
-See THIRD_PARTY_NOTICES.md for source provenance and external integrations.
+See THIRD_PARTY_NOTICES.md for source provenance and external components.

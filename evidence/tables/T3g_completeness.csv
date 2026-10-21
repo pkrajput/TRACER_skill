@@ -1,0 +1,9 @@
+Investigator,Arm,Recorded,Candidate terminal,Paired terminal,Candidate F,Candidate S
+deepseek,C0,196,179,178,175,43
+deepseek,C1,191,174,173,171,43
+deepseek,C2,193,175,174,172,45
+deepseek,C3,197,179,178,176,45
+gemini,C0,233,212,212,208,45
+gemini,C1,234,215,214,211,47
+gemini,C2,236,215,215,211,48
+gemini,C3,232,212,212,208,48

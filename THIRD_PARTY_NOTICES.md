@@ -1,23 +1,21 @@
-# Source provenance and third-party components
+# Third-party components and evidence
 
-This release separates three pieces of the research workspace:
+The TRACER code in this release uses the repository's Apache-2.0 license.
+Third-party software and input datasets retain their own terms.
 
-| Component | Source lineage |
-|---|---|
-| `tracer/` | TRACER research source archive; the Python package retains the `codegraph_trace` name |
-| `ghost_analysis/` | SWE-bench structural-study scripts for AST/history discovery and embedded-definition analysis |
-| `connectors/mini_swe_agent/` | mini-SWE-agent snapshot recorder from the ghost-script study |
-| `docs/assets/tracer_ghost_script_overview-1.png` | Author-supplied architecture and study overview figure |
+- GumTree 3.0.0 supplies the AST matcher. Its core is LGPL-3.0. The installer
+  downloads the pinned Java dependencies from Maven Central and verifies their
+  hashes. Their licenses remain upstream. JAR files are not vendored here.
+- Python's standard-library AST, tokenizer, and other modules retain the Python
+  Software Foundation license. Git and the JDK are separately installed tools.
+- Semgrep and CodeQL are separately installed scanners. No scanner binary,
+  commercial entitlement, or third-party rule pack is redistributed here.
+- SusVibes supplies the published repository tasks, coding trajectories, and
+  evaluation protocol. This repository distributes our derived result records
+  and source identities. It does not relicense the upstream repositories or
+  include their entire source trees or Docker images.
+- `jsonschema` is an optional test dependency under its upstream MIT license.
 
-The release adds portable packaging, examples, and documentation around those
-components. It does not bundle the original agent workspaces or third-party
-subject repositories.
-
-TRACER integrates with the `codebase-memory-mcp` structural index. Optional
-features use additional packages declared in their component metadata. The
-mini-SWE-agent connector targets a separately installed agent and environment;
-the upstream agent source is not vendored here. Each external dependency retains
-its own license. Preserve any existing source notices when redistributing.
-
-The maintainer has selected the Apache License, Version 2.0, for this release;
-see [LICENSE](LICENSE). This project license does not replace third-party terms.
+The legacy TRACER recorder's codebase-memory-mcp integration belongs to the
+preceding artifact revision. The Python security pipeline packaged here builds
+its own symbol index and does not depend on that server.

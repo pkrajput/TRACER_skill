@@ -1,0 +1,9 @@
+Investigator,Arm,N,S1,S2,S3 file edit,S4 retained,Exact symbol,Final S,New S
+deepseek,C0,189,121,51,44,25,25,6,2
+deepseek,C1,189,123,48,43,28,27,7,2
+deepseek,C2,189,118,37,32,21,19,7,4
+deepseek,C3,189,123,51,48,28,25,5,2
+gemini,C0,229,129,9,9,6,6,1,1
+gemini,C1,229,131,11,10,8,8,2,1
+gemini,C2,229,130,15,14,11,11,5,4
+gemini,C3,229,141,12,12,11,11,2,2

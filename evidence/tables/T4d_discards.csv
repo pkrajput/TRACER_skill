@@ -1,0 +1,7 @@
+Reason,DeepSeek,Gemini,Eligible rescue
+failed_public_functional_on_discarded_patch,32,1,No
+functional_execution_incomplete,25,2,No
+functional_two_slot_cap,37,0,Yes
+missing_post_edit_probe_rerun,2,0,Yes
+repair_error_interrupted_validation,7,4,No
+turn_limit_before_current_functional,26,5,Yes

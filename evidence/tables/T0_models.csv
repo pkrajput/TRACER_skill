@@ -1,0 +1,3 @@
+Campaign,Model identifier,Provider,Temperature
+deepseek,deepseek/deepseek-v3.2,siliconflow/fp8,0
+gemini,gemini-3.8-flash,gemini-direct,0
