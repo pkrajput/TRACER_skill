@@ -13,8 +13,8 @@
     },
     {
       "path": "CITATION.cff",
-      "bytes": 662,
-      "sha256": "0377af6567c51a1e5291c7f930a79640c7c83a7c8ceffa6edefa0e4e7f93d524"
+      "bytes": 1031,
+      "sha256": "c3af14749f8911a1a57d4ee807a785ce271c0bd77b1c8ab92671b1661ab2e079"
     },
     {
       "path": "LICENSE",
@@ -23,13 +23,13 @@
     },
     {
       "path": "NOTICE",
-      "bytes": 324,
-      "sha256": "b9635087569426e0c05936a9bf02b30e0cc41468c9f41aa84517d5382dde0929"
+      "bytes": 277,
+      "sha256": "f7e5f4f39d83d4fd47d3f80b57de0f86de1b406d9656b18059af888d1b3b0080"
     },
     {
       "path": "README.md",
-      "bytes": 5720,
-      "sha256": "518070a1fed30f3afba6d572116f685d6f119c7473fd817353b14f9cb83ba1dd"
+      "bytes": 8003,
+      "sha256": "42d34c32865e25252be38a235626f0d7c04a66d7e60389773083e7624778d416"
     },
     {
       "path": "SOURCE_PROVENANCE.json",
@@ -38,23 +38,23 @@
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1294,
-      "sha256": "83d777d4570d0561ea6e5a0d9ef2ac122b49a2f710f19c4a239870210485f4ca"
+      "bytes": 1216,
+      "sha256": "e7bff0e086cf2c88076083ae5ee7a11d5c57e2a8399944cd1c558e2b2d2b26a9"
     },
     {
       "path": "docs/ARCHIVAL_RELEASE.md",
-      "bytes": 3131,
-      "sha256": "68136b3b0a2a213a5eac115fe6d3e391e72119ea6184d6cd352d5d5d74dc131a"
+      "bytes": 3233,
+      "sha256": "cde8c4157518a3acf8ecabd4ac3595afe6a950ab581285f0ef556679bc592c7d"
     },
     {
       "path": "docs/PAPER_VERSION.json",
       "bytes": 296,
-      "sha256": "8d8c5c9b0f31672d249f4fb7716a40bfe2f08205dd12e534319474825655df5a"
+      "sha256": "74096dcf548d238f21c2f2fb46bf121c3c37b336ff94fb1aa83f094b913ad7b2"
     },
     {
       "path": "docs/paper.pdf",
-      "bytes": 146730,
-      "sha256": "1df85e7c02684b5b1435496009215a7d44cf1b331de6f0005ed444baf48b2e55"
+      "bytes": 147244,
+      "sha256": "cebedb9d094f7f73b6598e3e84d2153fd85eb0fa55c19d3ff04c6d051d2f3765"
     },
     {
       "path": "evidence/FINAL_MANUSCRIPT_DATA.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "evidence/README.md",
-      "bytes": 1705,
-      "sha256": "69023cf8a0a8c6642b7a5e4aa0eaa2a58812d4a2bf2471c1ae3e6f31ea258139"
+      "bytes": 1855,
+      "sha256": "4503ada2bc48eeea09f9d698e7efc988083fa6e9e7982f3ccb5643f9456e7481"
     },
     {
       "path": "evidence/TABLE_CATALOG.json",

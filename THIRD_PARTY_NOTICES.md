@@ -16,6 +16,5 @@ Third-party software and input datasets retain their own terms.
   include their entire source trees or Docker images.
 - `jsonschema` is an optional test dependency under its upstream MIT license.
 
-The legacy TRACER recorder's codebase-memory-mcp integration belongs to the
-preceding artifact revision. The Python security pipeline packaged here builds
-its own symbol index and does not depend on that server.
+The Python security pipeline builds its symbol index using Python's standard
+library. No external symbol-indexing server is required.

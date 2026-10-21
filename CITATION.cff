@@ -1,10 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite this software artifact and the associated paper when available."
+message: "Please cite the Zenodo study artifact using the preferred citation below."
 title: "TRACER Security Skill"
 type: software
 version: 0.1.0
 date-released: '2026-10-21'
-repository-code: "https://github.com/pkrajput/ghost_code_artifact"
+repository-code: "https://github.com/pkrajput/TRACER_skill"
+doi: "10.5281/zenodo.23530070"
 license: Apache-2.0
 authors:
   - family-names: Rajput
@@ -19,3 +20,16 @@ authors:
   - family-names: Bissyandé
     given-names: Tegawendé F.
     affiliation: University of Luxembourg
+preferred-citation:
+  type: generic
+  title: "Securing Agent-Generated Code Through Development History"
+  authors:
+    - family-names: Rajput
+      given-names: Prateek
+    - family-names: Khan
+      given-names: Shahzeb
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: "10.5281/zenodo.23530070"
+  url: "https://doi.org/10.5281/zenodo.23530070"

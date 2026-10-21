@@ -4,29 +4,61 @@
 
 This is the skill and implementation artifact for [*Securing Agent-Generated Code
 Through Development History*](docs/paper.pdf), with [manuscript sources](https://github.com/pkrajput/ghost_code).
+The study release is archived on [Zenodo](https://doi.org/10.5281/zenodo.23530070).
 TRACER connects current Python symbols and SAST
 findings to recorded structural changes and separately captured development
 rationale. A host coding agent investigates and repairs supported defects, then
 preserves the repair invariant and executable checks for later maintenance.
 
-## Install and use
+## Main results
+
+The SusVibes study contains **3,096 investigator runs** across 387 admitted coding
+attempts, seven coding generators, and two security investigators. The table below
+uses the **same 345 attempts** with complete original and candidate evaluations
+for every configuration and both investigators. Counts come from the official
+functional and security evaluations, with verified terminal completion.
+
+| Configuration | DeepSeek FuncPass | DeepSeek SecPass | Gemini FuncPass | Gemini SecPass |
+| --- | ---: | ---: | ---: | ---: |
+| Original generated code | 342/345 | 68/345 | 342/345 | 68/345 |
+| C0 — Current code + SAST + change-informed targets | 341/345 | 71/345 | 341/345 | 70/345 |
+| C1 — C0 + temporal AST history | 342/345 | 73/345 | 340/345 | 74/345 |
+| C2 — C0 + recorded rationale | 342/345 | **76/345** | 341/345 | **75/345** |
+| C3 — C0 + temporal history + recorded rationale | 342/345 | 74/345 | 340/345 | 73/345 |
+
+- **Review coverage.** Change-informed planning includes the reference-vulnerable
+  symbol in 366/387 attempts (94.6%), compared with 52/387 (13.4%) primary stock
+  SAST symbol overlap. This measures which symbols enter review, not detection
+  accuracy or successful repair.
+- **Repair.** Recorded rationale achieves the highest verified security pass
+  count with both investigators. C0 already receives patch-selected targets, and
+  C1–C3 include audit cues alongside their history channels.
+- **Maintenance.** On five selected structural-biology components, joint
+  feature-and-security-check success improves from **3/5 to 5/5** with repair
+  memory, a boundary gate, and one feedback retry. This compares the complete
+  workflows, including the extra retry, rather than memory alone.
+
+See the [paper](docs/paper.pdf) for generator and stratum breakdowns, and
+[frozen evidence](evidence/README.md) for the underlying populations.
+
+## Quick start
 
 Python 3.10 or newer and Git are required. The evidence helpers need no model
 credential and do not execute the analyzed source. GumTree history additionally
 requires a JDK with `java` and `javac` available, tested with OpenJDK 11.
 
 ```sh
+git clone https://github.com/pkrajput/TRACER_skill.git
+cd TRACER_skill
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e '.[test]'
-python -m tracer_skill.cli --help
+tracer-security --help
 python scripts/smoke.py
-python scripts/check_core.py
-python scripts/recompute_results.py
 ```
 
 Make `skills/tracer-security` discoverable by your coding agent, or explicitly
-give it that folder's `SKILL.md`. Keep this package installed in the environment
+give it [that folder's SKILL.md](skills/tracer-security/SKILL.md). Keep this package installed in the environment
 from which the agent runs helpers. For an agent with a local skills directory,
 copy that folder there or symlink it to this checkout. This is a portable skill,
 not a provider-specific model service. The host supplies its editing, execution,
@@ -51,6 +83,11 @@ without warnings. Outputs are immutable, so each invocation needs a fresh path.
 The historical study used Semgrep CE 1.101.0 and CodeQL 2.20.0, Python query pack
 1.3.4, with the security-extended suite. New scanner versions create a new
 configuration and are not an exact replication of the study.
+
+Give the plan and optional history outputs to the host agent through the skill.
+It uses current-source assessments and executable checks to qualify edits, then
+records the accepted repair's invariant and checks in an external edit note for
+future changes.
 
 Install the hash-pinned GumTree 3.0.0 dependencies once from Maven Central.
 
@@ -86,10 +123,16 @@ pre-reference implementations must not be introduced as investigator evidence.
   research workspace contained uncommitted fixes, so its Git HEAD alone is not
   used as the implementation identity.
 
-The paper reports 387 admitted attempts, 3,096 recorded investigator cells, and
-345 attempts with complete original and eight-arm candidate outcomes. C0 already
-receives changed-symbol targets. It is not stock SAST alone. C1–C3 also carry
-audit cues, so the comparison does not isolate each channel from those cues.
+## Verify the artifact
+
+```sh
+python scripts/check_core.py
+python scripts/recompute_results.py
+```
+
+These commands run local regression checks and recompute the shared results by
+configuration, generator, and stratum from the archived cell records. Neither
+command calls a model or launches a benchmark campaign.
 
 The portable wrappers expose the existing mechanisms. They are not a new
 benchmark run, and installing the skill alone does not reproduce the measured
@@ -99,13 +142,15 @@ recomputation does not.
 
 ## Availability and citation
 
-This release replaces the earlier NIER-focused artifact layout. Its predecessor
-remains in Git history at `3fe2b3230991f771b92825ecffd312a68fd0713e`.
-The repository is currently named `ghost_code_artifact`. A future rename to
-`TRACER_skill` does not change the package or skill names.
+Rajput, P., & Khan, S. (2026). *Securing Agent-Generated Code Through Development
+History*. Zenodo. https://doi.org/10.5281/zenodo.23530070
 
-See `CITATION.cff`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, and
-`docs/ARCHIVAL_RELEASE.md`. No DOI or artifact badge is claimed before deposit
-and evaluation. Raw investigator trajectories, complete evaluator logs, and
-container exports require a separate archival release. They are not silently
-substituted by the compact result tables.
+The DOI preserves the `v0.1.0` release with software, a manuscript snapshot, and
+derived study records. This repository also carries subsequent documentation
+and manuscript updates. Raw investigator transcripts, complete evaluator logs,
+and container exports are outside that deposit.
+
+Code is licensed under [Apache-2.0](LICENSE). See [CITATION.cff](CITATION.cff),
+[third-party notices](THIRD_PARTY_NOTICES.md), and
+[archive scope](docs/ARCHIVAL_RELEASE.md) for citation, dependencies, and evidence
+availability.

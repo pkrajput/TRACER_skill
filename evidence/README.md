@@ -23,8 +23,11 @@ DeepSeek 71/73/76/74 and Gemini 70/74/75/73, with 68 original passes in 345 atte
 
 The exporter is `scripts/export_study.py`. It requires explicit paths to the
 original final DeepSeek results, Gemini log-rescore results, case manifest, and
-frozen analysis. Its source hashes document what was exported. Full trajectories,
-patches, test stdout, prepared histories, and component-study source/check records
-belong in the separate archival data deposit described in `docs/ARCHIVAL_RELEASE.md`.
-Their absence is not a claim that the aggregate table alone reproduces those
-investigations or establishes independent vulnerability labels.
+frozen analysis. Its source hashes document what was exported. The software and
+these derived records are archived at
+[Zenodo DOI 10.5281/zenodo.23530070](https://doi.org/10.5281/zenodo.23530070).
+Full trajectories, patches, test stdout, prepared histories, and component-study
+source/check records are outside that deposit. See
+[`docs/ARCHIVAL_RELEASE.md`](../docs/ARCHIVAL_RELEASE.md) for the archive scope.
+The included rows support result recomputation, not full investigation replay
+or independent establishment of vulnerability labels.
