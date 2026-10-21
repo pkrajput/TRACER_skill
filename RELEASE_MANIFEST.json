@@ -48,13 +48,13 @@
     },
     {
       "path": "docs/PAPER_VERSION.json",
-      "bytes": 296,
-      "sha256": "74096dcf548d238f21c2f2fb46bf121c3c37b336ff94fb1aa83f094b913ad7b2"
+      "bytes": 310,
+      "sha256": "588b57fcbeaea1baf77820e65d62eee3cec69506847efe91c927a2ed187d8072"
     },
     {
       "path": "docs/paper.pdf",
-      "bytes": 147244,
-      "sha256": "cebedb9d094f7f73b6598e3e84d2153fd85eb0fa55c19d3ff04c6d051d2f3765"
+      "bytes": 121536,
+      "sha256": "275e95a7000d284c9e065c55d6ef607bec923ade564977a5caf31292a5315b5c"
     },
     {
       "path": "evidence/FINAL_MANUSCRIPT_DATA.json",
@@ -243,8 +243,8 @@
     },
     {
       "path": "evidence/tables/final_results.tex",
-      "bytes": 1572,
-      "sha256": "7844596da334e3002ea70378410b5b5f8f52088b1baf3063099a1b26eb78d030"
+      "bytes": 1473,
+      "sha256": "a1e04ef6d5df79aa889fc78a6efd4a434d6f77b3a119bbe4fe5d33965be87cfb"
     },
     {
       "path": "evidence/tables/final_taxonomy.tex",
