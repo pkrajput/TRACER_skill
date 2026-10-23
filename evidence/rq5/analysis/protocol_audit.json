@@ -1,0 +1,7 @@
+{
+  "all_cells_retained": true,
+  "equal_first_inputs_within_memory_level": true,
+  "no_security_feedback_in_B0_B1": true,
+  "at_most_one_retry": true,
+  "full_gate_never_accepts_failed_check": true
+}

@@ -1,0 +1,62 @@
+--- repaired_start.py
++++ B0_candidate.py
+@@ -2,7 +2,7 @@
+ 
+ class _TracerComponent:
+ 
+-    def __init__(self, jsonl_file, verbose=True, truncate=None, max_length=100, alphabet='ACDEFGHIKLMNPQRSTVWYX-'):
++    def __init__(self, jsonl_file, verbose=True, truncate=None, max_length=100, alphabet='ACDEFGHIKLMNPQRSTVWYX-', allow_nested=False):
+         import json
+         import time
+         import os
+@@ -22,23 +22,40 @@
+                         print(f'Invalid name (empty or not string): {name}')
+                     continue
+                 normalized = os.path.normpath(name)
+-                if os.path.isabs(normalized) or '..' in normalized or '/' in name or ('\\' in name):
++                if os.path.isabs(normalized) or '..' in normalized:
+                     discard_count['bad_name'] += 1
+                     if verbose:
+                         print(f'Invalid name (path traversal or absolute): {name}')
+                     continue
+-                if any((sep in name for sep in ('/', '\\'))):
+-                    discard_count['bad_name'] += 1
+-                    if verbose:
+-                        print(f'Invalid name (contains directory separator): {name}')
+-                    continue
++                if not allow_nested:
++                    if any((sep in name for sep in ('/', '\\'))):
++                        discard_count['bad_name'] += 1
++                        if verbose:
++                            print(f'Invalid name (contains directory separator): {name}')
++                        continue
++                    stored_name = name
++                else:
++                    output_subdir = entry.get('output_subdir')
++                    if output_subdir:
++                        if not isinstance(output_subdir, str):
++                            discard_count['bad_name'] += 1
++                            if verbose:
++                                print(f'Invalid output_subdir (not string): {output_subdir}')
++                            continue
++                        sub_norm = os.path.normpath(output_subdir)
++                        if os.path.isabs(sub_norm) or '..' in sub_norm:
++                            discard_count['bad_name'] += 1
++                            if verbose:
++                                print(f'Invalid output_subdir (path traversal or absolute): {output_subdir}')
++                            continue
++                        stored_name = os.path.join(output_subdir, name)
++                    else:
++                        stored_name = name
++                    entry['name'] = stored_name
+                 bad_chars = set([s for s in seq]).difference(alphabet_set)
+                 if len(bad_chars) == 0:
+                     if len(entry['seq']) <= max_length:
+-                        if True:
+-                            self.data.append(entry)
+-                        else:
+-                            discard_count['bad_seq_length'] += 1
++                        self.data.append(entry)
+                     else:
+                         discard_count['too_long'] += 1
+                 else:

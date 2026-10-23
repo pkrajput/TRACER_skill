@@ -1,61 +1,66 @@
-# Archived release and evidence availability
+# Complete study archive
 
-The published study artifact is
-[Securing Agent-Generated Code Through Development History](https://doi.org/10.5281/zenodo.23530070),
-credited to Prateek Rajput and Shahzeb Khan on Zenodo, 21 October 2026.
-The maintained source repository is [TRACER_skill](https://github.com/pkrajput/TRACER_skill).
+The complete artifact for *Securing Agent-Generated Code Through Development
+History* is archived at [Zenodo DOI 10.5281/zenodo.23591518](https://doi.org/10.5281/zenodo.23591518),
+published on 23 October 2026. The record credits Prateek Rajput and Shahzeb Khan
+and links this existing [code repository](https://github.com/pkrajput/TRACER_skill).
 
-## Archived version
+## Published bytes
 
-Zenodo preserves `tracer-security-v0.1.0.zip`, 2,943,781 bytes, from source commit
-`718c272`. Its checksums are
+The record contains `tracer-complete-study-2026-10-23.zip`, 15,260,514 bytes:
 
 ```text
-SHA-256 18a314a15dffcbca63d2926d0e9a133ca03cbcc013bef8d76c2f77166ba86adf
-MD5     c1aa21fa46e7af252cfdfcde18963936
+SHA-256 32908f4aa48d125c88200d4409a37da7a477a4a8f1f67b4a8abb5803ac635b43
+MD5     95fc560265774100aac1d3707abc0288
 ```
 
-The deposit contains the portable skill, research helpers, source hash manifest,
-setup instructions, regression checks, derived outcome records, manuscript
-tables, and a manuscript snapshot. It supports local recomputation of the
-reported shared-cohort results and investigation funnels with no model calls.
-The ZIP size and MD5 were verified against the Zenodo record on 21 October 2026.
+The size and MD5 match the published Zenodo API response saved in
+`provenance/ZENODO_23591518.json`. `scripts/fetch_artifact.py` pins the SHA-256,
+checks it before extraction, and refuses to replace an existing output directory.
+After extraction, `scripts/verify_release.py --artifact-root PATH` verifies all
+file hashes and recomputes the benchmark and RQ5 outcomes without model calls.
 
-Subsequent repository changes do not change that archived release. The current
-tool repository does not bundle the manuscript. It is maintained in the
-[separate paper repository](https://github.com/pkrajput/ghost_code). The code
-retains its Apache-2.0 license, and third-party components retain their own terms.
+The ZIP was prepared before its DOI was assigned. Its citation files and paper
+snapshot therefore retain the previous DOI and a pending-DOI statement. This
+repository and the [paper repository](https://github.com/pkrajput/ghost_code)
+now cite the actual new record. These citation updates do not change the published
+ZIP's identity or scientific results. The current paper remains 10 text pages and
+two reference pages; the manuscript is maintained in the separate repository.
 
-## Scope of the evidence
+## Included evidence
 
-The compact derived-data release contains 3,096 cell records. It does not include
-raw investigator transcripts, complete evaluator logs, container exports, or the
-full source/check records for the component continuation study. Their absence
-does not prevent recomputing the included outcome tables, but this package alone
-does not regenerate every investigation or independently replay every check.
+The archive contains the TRACER Security implementation, all 3,096 published
+derived benchmark cells, frozen analyses and tables, and the corrected independent
+maintenance study. RQ5 includes ten tasks in five repository clusters, four
+conditions and 40 primary cells, plus all original runs and correction stages.
+Prompts, model responses, candidate code, executable checks, receipts, original
+biology repairs, source audits, upstream licenses and audit lineage are included.
 
-A separate raw-evidence release would need cohort and scanner manifests,
-retained/discarded patches, prepared history/rationale views, investigator
-actions, official test logs, and component repair/continuation records with
-qualified checks. Preserve upstream licenses and use pinned retrieval scripts
-where redistribution is restricted. Document every missing or restricted input
-and keep credentials, private files, and personal caches outside the release.
+The current code checkout adds the frozen RQ5 driver and its local dependencies,
+portable analysis/replay helpers, corrected tables and analysis outputs. Large
+raw evidence remains in the pinned archive. One controller-test fixture has a
+documented portability patch; production code and test assertions are unchanged.
 
-## ICSE 2027 policy
+Result recomputation is self-contained after downloading the archive. Saved
+candidate execution additionally requires Docker and the recorded Linux/amd64
+image. The supplied reconstruction recipe creates a new environment and does
+not promise the original image digest. Fresh model generation requires upstream
+project environments, scanners, provider credentials and inference budget.
 
-Policy checked on 21 October 2026 against the official
-[SEIP call](https://conf.researchr.org/track/icse-2027/icse-2027-seip),
-[Open Science policy](https://conf.researchr.org/track/icse-2027/icse-2027-icse-2027-open-science-policies), and
-[Artifact Evaluation call](https://conf.researchr.org/track/icse-2027/icse-2027-artifact-evaluation).
+Raw benchmark investigator transcripts, complete benchmark evaluator logs, full
+upstream source trees and container exports are excluded. This restriction does
+not apply to the included RQ5 prompts, responses and execution receipts. The
+artifact distinguishes observed contract violations from unknown executions and
+retains unfavorable outcomes; a fallback is not counted as feature delivery.
 
-The Open Science policy asks every submission to include a Data Availability
-section after the conclusion. It encourages availability at submission and
-public availability after acceptance, while permitting explained restrictions.
-GitHub alone is not an archival repository. The Zenodo DOI supplies a permanent
-identifier for the deposited version.
+## Earlier release and licenses
 
-Accepted SEIP papers may separately submit artifacts for evaluation. Registration
-is listed for 22 January 2027 and submission for 29 January 2027. The Available
-badge requires a permanence plan and stable identifier. No badge is presently
-claimed. Clear setup instructions, license terms, and a quick-start test support
-evaluation of artifact functionality and reuse.
+The earlier [record 23530070](https://doi.org/10.5281/zenodo.23530070) remains
+historical provenance. Its `tracer-security-v0.1.0.zip` has SHA-256
+`18a314a15dffcbca63d2926d0e9a133ca03cbcc013bef8d76c2f77166ba86adf` and is preserved
+inside the complete archive. Its old maintenance comparison is superseded by
+the independent factorial evaluation.
+
+Zenodo record metadata uses CC-BY-4.0. TRACER software retains its Apache-2.0
+license; upstream source extracts and datasets retain their own terms. The
+included LICENSE, THIRD_PARTY_NOTICES and component licenses govern those files.

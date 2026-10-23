@@ -25,9 +25,28 @@ The exporter is `scripts/export_study.py`. It requires explicit paths to the
 original final DeepSeek results, Gemini log-rescore results, case manifest, and
 frozen analysis. Its source hashes document what was exported. The software and
 these derived records are archived at
-[Zenodo DOI 10.5281/zenodo.23530070](https://doi.org/10.5281/zenodo.23530070).
-Full trajectories, patches, test stdout, prepared histories, and component-study
-source/check records are outside that deposit. See
+[Zenodo DOI 10.5281/zenodo.23591518](https://doi.org/10.5281/zenodo.23591518).
+Full benchmark trajectories, patches, test stdout and prepared histories are
+outside that deposit. Complete independent RQ5 source/check records are included.
+See
 [`docs/ARCHIVAL_RELEASE.md`](../docs/ARCHIVAL_RELEASE.md) for the archive scope.
 The included rows support result recomputation, not full investigation replay
 or independent establishment of vulnerability labels.
+
+## Independent RQ5 maintenance study
+
+`rq5/analysis/` contains the corrected ten-task, four-condition comparison and
+its protocol audit. The primary cohort contains 24 unchanged initial cells,
+12 reruns after feature-oracle corrections, and four adapter replays. Corrections
+cover every arm of each affected task. All original outcomes are retained on
+Zenodo; no SusVibes continuation contributes to the independent cohort.
+
+Final Func/Sec/Joint counts (out of ten) are B0 7/6/4, B1 9/9/8, B2 6/7/3 and
+B3 10/9/9. All conditions allow at most one retry. SecPass combines the saved and
+extended boundary checks; JointPass also requires ordinary and feature checks.
+Fallback is not feature delivery. The sample is purposive, contains five
+repository clusters, and includes naming and reliability contracts alongside
+security boundaries. It does not estimate a population-wide treatment effect.
+
+Use `scripts/fetch_artifact.py` and the README's verification commands to obtain
+and recompute all primary records. The frozen research code is in `research/`.

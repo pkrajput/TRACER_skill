@@ -1,0 +1,459 @@
+{
+  "status": "completed",
+  "tasks": 10,
+  "repository_clusters": 5,
+  "model": "deepseek/deepseek-v3.2",
+  "arms": {
+    "B0": {
+      "first": {
+        "N": 10,
+        "FuncPass": 5,
+        "SecPass": 6,
+        "JointPass": 4,
+        "security_violations": 1,
+        "security_unknown": 3,
+        "saved_boundary_pass": 8,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 6
+      },
+      "final": {
+        "N": 10,
+        "FuncPass": 7,
+        "SecPass": 6,
+        "JointPass": 4,
+        "security_violations": 3,
+        "security_unknown": 1,
+        "saved_boundary_pass": 9,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 6
+      },
+      "retries": 5,
+      "fallbacks": 3,
+      "accepted_with_boundary_failure": 3,
+      "any_observed_violation": 3
+    },
+    "B1": {
+      "first": {
+        "N": 10,
+        "FuncPass": 6,
+        "SecPass": 6,
+        "JointPass": 5,
+        "security_violations": 1,
+        "security_unknown": 3,
+        "saved_boundary_pass": 6,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 7
+      },
+      "final": {
+        "N": 10,
+        "FuncPass": 9,
+        "SecPass": 9,
+        "JointPass": 8,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 9,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 10
+      },
+      "retries": 4,
+      "fallbacks": 1,
+      "accepted_with_boundary_failure": 1,
+      "any_observed_violation": 1
+    },
+    "B2": {
+      "first": {
+        "N": 10,
+        "FuncPass": 4,
+        "SecPass": 7,
+        "JointPass": 3,
+        "security_violations": 1,
+        "security_unknown": 2,
+        "saved_boundary_pass": 8,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 7
+      },
+      "final": {
+        "N": 10,
+        "FuncPass": 6,
+        "SecPass": 7,
+        "JointPass": 3,
+        "security_violations": 3,
+        "security_unknown": 0,
+        "saved_boundary_pass": 9,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 7
+      },
+      "retries": 7,
+      "fallbacks": 7,
+      "accepted_with_boundary_failure": 0,
+      "any_observed_violation": 3
+    },
+    "B3": {
+      "first": {
+        "N": 10,
+        "FuncPass": 6,
+        "SecPass": 6,
+        "JointPass": 5,
+        "security_violations": 1,
+        "security_unknown": 3,
+        "saved_boundary_pass": 6,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 7
+      },
+      "final": {
+        "N": 10,
+        "FuncPass": 10,
+        "SecPass": 9,
+        "JointPass": 9,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 9,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 10
+      },
+      "retries": 5,
+      "fallbacks": 1,
+      "accepted_with_boundary_failure": 0,
+      "any_observed_violation": 1
+    }
+  },
+  "by_repository": {
+    "dockq_handle_lifecycle": {
+      "B0": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 1,
+        "JointPass": 1,
+        "security_violations": 0,
+        "security_unknown": 1,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 1
+      },
+      "B1": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B2": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 2,
+        "JointPass": 1,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B3": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      }
+    },
+    "haddock_extract_symlink": {
+      "B0": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 2,
+        "JointPass": 1,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B1": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 2,
+        "JointPass": 1,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B2": {
+        "N": 2,
+        "FuncPass": 0,
+        "SecPass": 2,
+        "JointPass": 0,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B3": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      }
+    },
+    "proteinmpnn_record_name": {
+      "B0": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 0,
+        "JointPass": 0,
+        "security_violations": 2,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 0
+      },
+      "B1": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 1,
+        "JointPass": 1,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 1,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 2
+      },
+      "B2": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 0,
+        "JointPass": 0,
+        "security_violations": 2,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 0
+      },
+      "B3": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 1,
+        "JointPass": 1,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 1,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 2
+      }
+    },
+    "rfdiffusion_checkpoint": {
+      "B0": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 1,
+        "JointPass": 0,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 1,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 1
+      },
+      "B1": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B2": {
+        "N": 2,
+        "FuncPass": 1,
+        "SecPass": 1,
+        "JointPass": 0,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 1,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 1
+      },
+      "B3": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      }
+    },
+    "vina_write_poses_validation": {
+      "B0": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B1": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B2": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      },
+      "B3": {
+        "N": 2,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 2,
+        "security_violations": 0,
+        "security_unknown": 0,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 2
+      }
+    }
+  },
+  "ledger": {
+    "accounted_usd": 0.095559,
+    "cap_micro_usd": 10000000,
+    "id": "rq5_independent_biology_factorial_v1",
+    "initial_total_micro_usd": 389762989,
+    "provider_reported_usd": 0.08682935599999998,
+    "requests": 88,
+    "requests_without_reported_cost": 0
+  },
+  "security_components_only": {
+    "B0": {
+      "first": {
+        "N": 6,
+        "FuncPass": 2,
+        "SecPass": 3,
+        "JointPass": 1,
+        "security_violations": 1,
+        "security_unknown": 2,
+        "saved_boundary_pass": 4,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 3
+      },
+      "final": {
+        "N": 6,
+        "FuncPass": 4,
+        "SecPass": 3,
+        "JointPass": 1,
+        "security_violations": 3,
+        "security_unknown": 0,
+        "saved_boundary_pass": 5,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 3
+      }
+    },
+    "B1": {
+      "first": {
+        "N": 6,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 1,
+        "security_violations": 1,
+        "security_unknown": 3,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 3
+      },
+      "final": {
+        "N": 6,
+        "FuncPass": 5,
+        "SecPass": 5,
+        "JointPass": 4,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 5,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 6
+      }
+    },
+    "B2": {
+      "first": {
+        "N": 6,
+        "FuncPass": 1,
+        "SecPass": 3,
+        "JointPass": 0,
+        "security_violations": 1,
+        "security_unknown": 2,
+        "saved_boundary_pass": 4,
+        "saved_boundary_fail": 0,
+        "extended_boundary_pass": 3
+      },
+      "final": {
+        "N": 6,
+        "FuncPass": 3,
+        "SecPass": 3,
+        "JointPass": 0,
+        "security_violations": 3,
+        "security_unknown": 0,
+        "saved_boundary_pass": 5,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 3
+      }
+    },
+    "B3": {
+      "first": {
+        "N": 6,
+        "FuncPass": 2,
+        "SecPass": 2,
+        "JointPass": 1,
+        "security_violations": 1,
+        "security_unknown": 3,
+        "saved_boundary_pass": 2,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 3
+      },
+      "final": {
+        "N": 6,
+        "FuncPass": 6,
+        "SecPass": 5,
+        "JointPass": 5,
+        "security_violations": 1,
+        "security_unknown": 0,
+        "saved_boundary_pass": 5,
+        "saved_boundary_fail": 1,
+        "extended_boundary_pass": 6
+      }
+    }
+  }
+}

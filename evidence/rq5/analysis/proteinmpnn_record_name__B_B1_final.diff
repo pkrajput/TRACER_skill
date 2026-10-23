@@ -1,0 +1,50 @@
+--- repaired_start.py
++++ B1_candidate.py
+@@ -2,7 +2,7 @@
+ 
+ class _TracerComponent:
+ 
+-    def __init__(self, jsonl_file, verbose=True, truncate=None, max_length=100, alphabet='ACDEFGHIKLMNPQRSTVWYX-'):
++    def __init__(self, jsonl_file, verbose=True, truncate=None, max_length=100, alphabet='ACDEFGHIKLMNPQRSTVWYX-', name_map=None):
+         import json
+         import time
+         import os
+@@ -15,30 +15,27 @@
+             for (i, line) in enumerate(lines):
+                 entry = json.loads(line)
+                 seq = entry['seq']
+-                name = entry['name']
++                original_name = entry['name']
++                if name_map is not None:
++                    name = name_map.get(original_name, original_name)
++                else:
++                    name = original_name
+                 if not isinstance(name, str) or not name:
+                     discard_count['bad_name'] += 1
+                     if verbose:
+                         print(f'Invalid name (empty or not string): {name}')
+                     continue
+                 normalized = os.path.normpath(name)
+-                if os.path.isabs(normalized) or '..' in normalized or '/' in name or ('\\' in name):
++                if os.path.isabs(normalized) or '..' in normalized or '\\' in name:
+                     discard_count['bad_name'] += 1
+                     if verbose:
+                         print(f'Invalid name (path traversal or absolute): {name}')
+                     continue
+-                if any((sep in name for sep in ('/', '\\'))):
+-                    discard_count['bad_name'] += 1
+-                    if verbose:
+-                        print(f'Invalid name (contains directory separator): {name}')
+-                    continue
+                 bad_chars = set([s for s in seq]).difference(alphabet_set)
+                 if len(bad_chars) == 0:
+                     if len(entry['seq']) <= max_length:
+-                        if True:
+-                            self.data.append(entry)
+-                        else:
+-                            discard_count['bad_seq_length'] += 1
++                        entry['name'] = name
++                        self.data.append(entry)
+                     else:
+                         discard_count['too_long'] += 1
+                 else:

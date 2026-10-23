@@ -15,6 +15,7 @@ jobs:
       - run: python -m pip install -e '.[test]'
       - run: python scripts/smoke.py
       - run: python scripts/check_core.py
+      - run: python scripts/check_research.py
       - run: python scripts/recompute_results.py
       - run: python -m security_ground_truth.temporal_security.gumtree_install
       - run: python -m unittest security_ground_truth.temporal_security.test_gumtree

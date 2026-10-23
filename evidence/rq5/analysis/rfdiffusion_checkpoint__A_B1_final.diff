@@ -1,0 +1,22 @@
+--- repaired_start.py
++++ B1_candidate.py
+@@ -3,9 +3,17 @@
+ class _TracerComponent:
+ 
+     def load_checkpoint(self) -> None:
++        import pickle
+         self._log.info(f'Reading checkpoint from {self.ckpt_path}')
+         print('This is inf_conf.ckpt_path')
+         print(self.ckpt_path)
+-        with torch.serialization.safe_globals([slice]):
+-            self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=True)
++        try:
++            with torch.serialization.safe_globals([slice]):
++                self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=True)
++        except (pickle.UnpicklingError, RuntimeError, AttributeError) as e:
++            self._log.info(f'Initial checkpoint load failed with error: {e}. Retrying with compatibility mode for argparse.Namespace objects.')
++            import argparse
++            import builtins
++            with torch.serialization.safe_globals([slice, argparse.Namespace, builtins.dict, builtins.list, builtins.tuple, builtins.set, builtins.float, builtins.int, builtins.str, builtins.bool, builtins.bytes, type(None)]):
++                self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=True)
+ load_checkpoint = _TracerComponent.load_checkpoint

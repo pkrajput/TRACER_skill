@@ -1,42 +1,21 @@
-% Evidence: silent_fix_feature_v1/{cases,continuations}; repository counts:
-% paper/NOSTRUM_BARCELONA_PROOFREAD_PACK.md, original pinned scan inventory.
-\setlength{\tabcolsep}{3pt}
+% Evidence: rq5_independent_biology_final/RESULTS.json and AUDIT_LINEAGE.json.
+\setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.12}
-\begin{tabularx}{\textwidth}{@{}l r >{\raggedright\arraybackslash}p{0.17\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X c c@{}}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X c c c c@{}}
 \toprule
-Repository & Alerts & Target symbol & Repaired component defect & Feature evolution & \multicolumn{2}{c}{Joint success}\\
-\cmidrule(lr){6-7}
- & & & & & No Memory & Memory+Gate\\
+Repository & Two feature tasks & B0 & B1 & B2 & B3\\
+ & & Functional & Memory & Boundary & Both\\
 \midrule
-DockQ & 10 & \code{load_PDB}
-& Handle leak on parser failure/fallback
-& Extension-first CIF/PDB parsing, optional format return
-& Yes & Yes\\
-haddock3 & 247 & \code{extract_files_flat}
-& Extraction escape through destination symlink
-& ZIP and TAR support, optional nested paths
-& No$^{a}$ & Yes\\
-ProteinMPNN & 43 & \code{StructureDataset}\newline\code{.__init__}
-& Unvalidated record names used in output paths
-& Minimum-length and missing-coordinate filters
-& Yes & Yes\\
-RFdiffusion & 49 & \code{Sampler.}\newline\code{load_checkpoint}
-& Unrestricted pickle loading under pinned runtime$^{b}$
-& Legacy-checkpoint exception handling and CPU fallback
-& No$^{c}$ & Yes, retry\\
-AutoDock-Vina & 60 & \code{Vina.write_poses}
-& Overwrite branch bypasses numeric validation
-& Verbose flag and consolidated validation chain
-& Yes & Yes\\
+DockQ & Lazy model iteration; parsed-model cache & 1/1/1 & 2/2/2 & 1/2/1 & 2/2/2\\
+haddock3 & Internal TAR aliases; selected nested extraction & 1/2/1 & 1/2/1 & 0/2/0 & 2/2/2\\
+ProteinMPNN & Hierarchical names and metadata; name mapping & 2/0/0 & 2/1/1 & 2/0/0 & 2/1/1\\
+RFdiffusion & Legacy config retry; checkpoint bytes cache & 1/1/0 & 2/2/2 & 1/1/0 & 2/2/2\\
+AutoDock-Vina & Dry-run preview; pose text in memory & 2/2/2 & 2/2/2 & 2/2/2 & 2/2/2\\
 \midrule
-\multicolumn{5}{@{}l}{\textbf{Joint successes, first proposal}} & \textbf{3/5} & \textbf{4/5}\\
-\multicolumn{5}{@{}l}{\textbf{Joint successes, final accepted feature implementation}} & \textbf{3/5} & \textbf{5/5}\\
-\multicolumn{5}{@{}l}{Additional proposals / secure-code fallbacks} & 0 / 0 & 1 / 0\\
+\multicolumn{2}{@{}l}{\textbf{First proposal, total (out of 10)}} & \textbf{5/6/4} & \textbf{6/6/5} & \textbf{4/7/3} & \textbf{6/6/5}\\
+\multicolumn{2}{@{}l}{\textbf{Final proposal, total (out of 10)}} & \textbf{7/6/4} & \textbf{9/9/8} & \textbf{6/7/3} & \textbf{10/9/9}\\
+\multicolumn{2}{@{}l}{Final boundary assertion violations / unknowns} & 3/1 & 1/0 & 3/0 & 1/0\\
+\multicolumn{2}{@{}l}{Accepted proposals with observed boundary violation} & 3 & 1 & 0 & 0\\
+\multicolumn{2}{@{}l}{Fallbacks (not feature successes)} & 3 & 1 & 7 & 1\\
 \bottomrule
 \end{tabularx}
-\par\smallskip
-\begin{minipage}{\textwidth}\scriptsize
-$^{a}$ ZIP output is missing. The saved boundary check passes.
-$^{b}$ User-specified remedy, locally implemented after two unsuccessful model repairs.
-$^{c}$ An unimported \code{pickle} name leaves the feature and boundary outcomes unknown. The gate's retry resolves this in Memory+Gate.
-\end{minipage}

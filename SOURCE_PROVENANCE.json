@@ -1,5 +1,5 @@
 {
-  "description": "Copied implementation files retain their research-workspace bytes. Packaging and portable wrappers are separate additions.",
+  "description": "Production implementation retains its published research bytes. Packaging and portable wrappers are separate additions; one test fixture has the documented portability patch.",
   "research_git_head": "3915d30edaf2dd551b85b20033a29a525294af95",
   "research_workspace_had_uncommitted_experiment_fixes": true,
   "copied_python_sources": [
@@ -237,7 +237,9 @@
     },
     {
       "path": "security_ground_truth/temporal_security/test_v12.py",
-      "sha256": "a2187d2078d869231e65fdc61e4155a42fd0d629d7e245d105fd2897637d871d"
+      "sha256": "cc647a307eaeba9f57203ef7f2f7b191e7a5a499b6d3fabe151150b2e028e950",
+      "published_sha256": "a2187d2078d869231e65fdc61e4155a42fd0d629d7e245d105fd2897637d871d",
+      "packaging_patch": "provenance/TEST_FIXTURE_PORTABILITY.patch"
     },
     {
       "path": "security_ground_truth/temporal_security/unseeded_gate.py",
@@ -316,5 +318,7 @@
       "sha256": "3372f80bf7471fe9caf2de5b9759e3de238ff363991bd331c44bf770675c85b0"
     }
   ],
-  "upstream_artifact_commit": "3fe2b3230991f771b92825ecffd312a68fd0713e"
+  "upstream_artifact_commit": "3fe2b3230991f771b92825ecffd312a68fd0713e",
+  "independent_rq5_sources": "provenance/RESEARCH_SOURCE.json",
+  "test_fixture_portability_patch": "provenance/TEST_FIXTURE_PORTABILITY.patch"
 }

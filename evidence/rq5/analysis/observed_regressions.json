@@ -1,0 +1,115 @@
+[
+  {
+    "case_id": "rfdiffusion_checkpoint__A",
+    "classification": "unrestricted checkpoint deserialization",
+    "B0_attempt": 2,
+    "B0_FuncPass": "pass",
+    "saved": {
+      "check_sha256": "f3a4ab6bcb7ac2a1738e67c099aba1e46a697fe837aca9cd756e65f959e3cd7d",
+      "error": "checkpoint accepted an arbitrary pickle global",
+      "exception_type": "AssertionError",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "fail",
+      "target_reached": true,
+      "target_source_sha256": "4dfd14861b4026477963975ad5c4f9e264a84cfdcd2bf7e33b7462c06af7ff7d",
+      "target_symbol": "_TracerComponent.load_checkpoint"
+    },
+    "extended": {
+      "check_sha256": "e6fb3ce377e2ca17a3947ac9d74eec0b52368b2214880a783d39ef886526c656",
+      "error": "compatibility loading admitted a disallowed pickle global",
+      "exception_type": "AssertionError",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "fail",
+      "target_reached": true,
+      "target_source_sha256": "4dfd14861b4026477963975ad5c4f9e264a84cfdcd2bf7e33b7462c06af7ff7d",
+      "target_symbol": "_TracerComponent.load_checkpoint"
+    },
+    "comparisons": {
+      "B1": {
+        "FuncPass": "pass",
+        "SecPass": "pass",
+        "JointPass": true
+      },
+      "B3": {
+        "FuncPass": "pass",
+        "SecPass": "pass",
+        "JointPass": true
+      }
+    },
+    "diff": "rfdiffusion_checkpoint__A_B0_attempt2.diff"
+  },
+  {
+    "case_id": "proteinmpnn_record_name__A",
+    "classification": "portable backslash-name contract violation; not demonstrated Linux traversal",
+    "B0_attempt": 1,
+    "B0_FuncPass": "pass",
+    "saved": {
+      "check_sha256": "728190fd12d6aa24ae24d9316b19208b24d4702daeca4b2615ab562dac4a0aa9",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "pass",
+      "target_reached": true,
+      "target_source_sha256": "78fc08064eab1a3f26dc031d2a399bbc0385569822d60a8a47508765c1904941",
+      "target_symbol": "_TracerComponent.__init__"
+    },
+    "extended": {
+      "check_sha256": "c55c6ed8109f19dca1fb750500eeb543dd0ae93980f42193559b60bdacd47bf5",
+      "error": "hierarchical mode admitted an escaping output name: ('nested\\\\outside', '')",
+      "exception_type": "AssertionError",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "fail",
+      "target_reached": true,
+      "target_source_sha256": "78fc08064eab1a3f26dc031d2a399bbc0385569822d60a8a47508765c1904941",
+      "target_symbol": "_TracerComponent.__init__"
+    },
+    "comparisons": {
+      "B1": {
+        "FuncPass": "pass",
+        "SecPass": "pass",
+        "JointPass": true
+      },
+      "B3": {
+        "FuncPass": "pass",
+        "SecPass": "pass",
+        "JointPass": true
+      }
+    },
+    "diff": "proteinmpnn_record_name__A_B0_attempt1.diff"
+  },
+  {
+    "case_id": "proteinmpnn_record_name__B",
+    "classification": "portable backslash-name contract violation; not demonstrated Linux traversal",
+    "B0_attempt": 2,
+    "B0_FuncPass": "pass",
+    "saved": {
+      "check_sha256": "728190fd12d6aa24ae24d9316b19208b24d4702daeca4b2615ab562dac4a0aa9",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "pass",
+      "target_reached": true,
+      "target_source_sha256": "8643639d738e4a518d98d4178ab71306f020776bfa310dfe29c7f7773a67af5e",
+      "target_symbol": "_TracerComponent.__init__"
+    },
+    "extended": {
+      "check_sha256": "350d55c230ae2abf52ad7f8e36e15b43d804903b4081f4f57b07fbade4b7cf27",
+      "error": "name mapping admitted an escaping output name: 'x\\\\outside'",
+      "exception_type": "AssertionError",
+      "image": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+      "status": "fail",
+      "target_reached": true,
+      "target_source_sha256": "8643639d738e4a518d98d4178ab71306f020776bfa310dfe29c7f7773a67af5e",
+      "target_symbol": "_TracerComponent.__init__"
+    },
+    "comparisons": {
+      "B1": {
+        "FuncPass": "pass",
+        "SecPass": "fail",
+        "JointPass": false
+      },
+      "B3": {
+        "FuncPass": "pass",
+        "SecPass": "fail",
+        "JointPass": false
+      }
+    },
+    "diff": "proteinmpnn_record_name__B_B0_attempt2.diff"
+  }
+]

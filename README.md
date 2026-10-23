@@ -4,7 +4,7 @@
 
 This is the skill and implementation artifact for [*Securing Agent-Generated Code
 Through Development History*](https://github.com/pkrajput/ghost_code).
-The study release is archived on [Zenodo](https://doi.org/10.5281/zenodo.23530070).
+The complete study release is archived on [Zenodo](https://doi.org/10.5281/zenodo.23591518).
 TRACER connects current Python symbols and SAST
 findings to recorded structural changes and separately captured development
 rationale. A host coding agent investigates and repairs supported defects, then
@@ -33,10 +33,18 @@ functional and security evaluations, with verified terminal completion.
 - **Repair.** Recorded rationale achieves the highest verified security pass
   count with both investigators. C0 already receives patch-selected targets, and
   C1–C3 include audit cues alongside their history channels.
-- **Maintenance.** On five selected structural-biology components, joint
-  feature-and-security-check success improves from **3/5 to 5/5** with repair
-  memory, a boundary gate, and one feedback retry. This compares the complete
-  workflows, including the extra retry, rather than memory alone.
+- **Maintenance.** Ten independent structural-biology tasks in five repository
+  clusters compare memory and boundary feedback under the same one-retry limit.
+  Joint feature-and-boundary success is **4/10** with functional feedback (B0),
+  **8/10** with memory (B1), **3/10** with boundary feedback (B2), and **9/10** with
+  both (B3). B3 rejects its remaining violating proposal. Fallback retains the
+  repaired start and is not feature delivery.
+
+The maintenance sample is development-informed and independent of SusVibes.
+Memory includes prospective contract clarifications. The evidence distinguishes
+unrestricted deserialization from portable naming and reliability contracts;
+the latter do not establish exploitable vulnerabilities. Original runs and all
+oracle/adapter corrections remain available in the complete archive.
 
 See the [separate paper repository](https://github.com/pkrajput/ghost_code) for the manuscript, and
 [frozen evidence](evidence/README.md) for the underlying populations.
@@ -119,6 +127,9 @@ pre-reference implementations must not be introduced as investigator evidence.
   and manuscript tables. See `evidence/README.md` for populations and limitations.
 - `scripts` provides zero-model-cost smoke checks, regression checks, and result
   recomputation.
+- `research/frozen_pipeline` preserves the maintenance experiment drivers, task
+  definitions, audit scripts and their local import dependencies. See
+  [research/README.txt](research/README.txt) for the frozen paths and replay setup.
 - `SOURCE_PROVENANCE.json` records the exact copied implementation hashes. The
   research workspace contained uncommitted fixes, so its Git HEAD alone is not
   used as the implementation identity.
@@ -127,6 +138,7 @@ pre-reference implementations must not be introduced as investigator evidence.
 
 ```sh
 python scripts/check_core.py
+python scripts/check_research.py
 python scripts/recompute_results.py
 ```
 
@@ -140,15 +152,35 @@ model outcomes. Full regeneration needs the published inputs, project containers
 scanner packs, a configured provider, and paid inference. Archived-result
 recomputation does not.
 
+Download the complete evidence once and verify both studies without model calls:
+
+```sh
+python scripts/fetch_artifact.py
+python scripts/verify_release.py --artifact-root local-output/tracer-complete-study-2026-10-23
+python scripts/recompute_rq5.py --results local-output/tracer-complete-study-2026-10-23/evidence/rq5/rq5_independent_biology_final --out local-output/rq5
+```
+
+The downloader checks the published ZIP's exact SHA-256 before extraction. Pass
+`--archive /path/to/tracer-complete-study-2026-10-23.zip` to use an existing copy.
+The archive has all 40 primary cells, earlier runs, original biology repairs,
+prompts, responses, executable checks, licenses and the paper/source snapshot.
+`evidence/rq5/analysis` contains the corrected summary and protocol audit in this
+checkout. [Saved-candidate replay](research/README.txt) additionally needs Docker
+and the recorded image; result recomputation does not.
+
 ## Availability and citation
 
 Rajput, P., & Khan, S. (2026). *Securing Agent-Generated Code Through Development
-History*. Zenodo. https://doi.org/10.5281/zenodo.23530070
+History*. Zenodo. https://doi.org/10.5281/zenodo.23591518
 
-The DOI preserves the `v0.1.0` release with software and derived study records.
-This repository distributes the tool, documentation, and supporting evidence.
-The paper is maintained separately. Raw investigator transcripts, complete
-evaluator logs, and container exports are outside that deposit.
+The DOI preserves the complete 23 October study artifact. The Python tool version
+remains 0.1.0; the RQ5 drivers, analysis and evidence have been added. One controller
+test fixture uses a temporary ledger and canonical paths so tests run outside the
+original host; production guards and assertions are unchanged. Its patch is in
+`provenance/TEST_FIXTURE_PORTABILITY.patch`.
+The paper is maintained separately. Raw benchmark investigator transcripts,
+complete benchmark evaluator logs and container exports are outside the deposit;
+the complete RQ5 prompts, responses and execution receipts are included.
 
 Code is licensed under [Apache-2.0](LICENSE). See [CITATION.cff](CITATION.cff),
 [third-party notices](THIRD_PARTY_NOTICES.md), and

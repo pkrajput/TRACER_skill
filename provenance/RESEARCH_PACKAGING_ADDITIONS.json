@@ -1,0 +1,11 @@
+{
+  "reason": "Package markers prevent an installed TRACER distribution from shadowing the archived namespace packages. Original research files are unchanged.",
+  "added_files": {
+    "research/frozen_pipeline/paper/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e",
+    "research/frozen_pipeline/security_ground_truth/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e",
+    "research/frozen_pipeline/paper/bio_study/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e",
+    "research/frozen_pipeline/paper/anti_overwrite/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e",
+    "research/frozen_pipeline/security_ground_truth/temporal_security/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e",
+    "research/frozen_pipeline/security_ground_truth/repair_check/__init__.py": "6fd6dc03b7f31800dfd6798286dbad180d363854625f7483e0009e51be56370e"
+  }
+}

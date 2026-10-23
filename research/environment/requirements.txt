@@ -1,0 +1,4 @@
+numpy==1.26.4
+biopython==1.83
+torch==2.5.1+cpu
+# torch CPU index: https://download.pytorch.org/whl/cpu

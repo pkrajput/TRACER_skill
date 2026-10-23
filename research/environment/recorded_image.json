@@ -1,0 +1,12 @@
+{
+  "Id": "sha256:e57391f20f4e9ae37038c121d4a9bb858c598730e66e72f99d46428c94e4ae6c",
+  "RepoTags": [
+    "tracer-bio-validation:20261019"
+  ],
+  "RepoDigests": [],
+  "Created": "2026-10-19T14:04:12.234796432+02:00",
+  "Architecture": "amd64",
+  "Os": "linux",
+  "Size": 3764466933,
+  "runtime": "Python 3.11; torch 2.5.1+cpu; numpy 1.26.4; biopython 1.83"
+}

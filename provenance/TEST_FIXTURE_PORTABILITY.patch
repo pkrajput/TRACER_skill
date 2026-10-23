@@ -1,0 +1,22 @@
+--- published/security_ground_truth/temporal_security/test_v12.py
++++ packaged/security_ground_truth/temporal_security/test_v12.py
+@@ -287,7 +287,10 @@
+     def exercise(self,broken,resuming=False,failed_provider_cells=False):
+         from . import v12_campaign as campaign
+         with tempfile.TemporaryDirectory() as tmp:
+-            root=Path(tmp);root.joinpath('frozen_code').mkdir()
++            root=Path(tmp).resolve();root.joinpath('frozen_code').mkdir()
++            ledger=root/'fixture_ledger.sqlite3'
++            with campaign.sqlite3.connect(ledger) as db:
++                db.execute('CREATE TABLE budget_scopes (id TEXT PRIMARY KEY, cap_micro_usd INTEGER, initial_total_micro_usd INTEGER)')
+             cases=[{'case_key':WAGTAIL if i==0 else '%024x'%i,'baseline':'unused',
+                     'v12_stratum':'development_exposed'} for i in range(391)]
+             keys=[c['case_key'] for c in cases[:10]]
+@@ -337,6 +340,7 @@
+                 result=full_queue(cases,gate,completed);queued.extend(result)
+                 return [(c,a) for c in cases[10:20] for a in ('C0','C1','C2','C3')] if failed_provider_cells else []
+             with ExitStack() as stack:
++                stack.enter_context(patch.object(campaign,'LEDGER',ledger))
+                 for name,value in {'OpenRouterRepair':Gateway,'ThreadingHTTPServer':Server,
+                     'load_authors_classes':lambda p:{},'validate_case_external_snapshot':lambda c:None,
+                     'ledger_total':lambda:0,'cell_row':score,'full_queue':full,

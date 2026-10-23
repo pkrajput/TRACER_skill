@@ -1,0 +1,37 @@
+--- repaired_start.py
++++ B0_candidate.py
+@@ -1,4 +1,7 @@
+ import torch
++import torch
++import argparse
++import pickle
+ 
+ class _TracerComponent:
+ 
+@@ -6,6 +9,24 @@
+         self._log.info(f'Reading checkpoint from {self.ckpt_path}')
+         print('This is inf_conf.ckpt_path')
+         print(self.ckpt_path)
+-        with torch.serialization.safe_globals([slice]):
+-            self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=True)
++        try:
++            with torch.serialization.safe_globals([slice]):
++                self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=True)
++        except (TypeError, AttributeError, pickle.UnpicklingError) as e:
++            self._log.info('Initial load failed, attempting compatibility load for legacy configs')
++            with torch.serialization.safe_globals([slice, argparse.Namespace]):
++                self.ckpt = torch.load(self.ckpt_path, map_location=self.device, weights_only=False)
++            if 'config' in self.ckpt and isinstance(self.ckpt['config'], argparse.Namespace):
++                config_dict = vars(self.ckpt['config'])
++
++                def namespace_to_dict(obj):
++                    if isinstance(obj, argparse.Namespace):
++                        obj = vars(obj)
++                    if isinstance(obj, dict):
++                        return {k: namespace_to_dict(v) for (k, v) in obj.items()}
++                    elif isinstance(obj, list):
++                        return [namespace_to_dict(item) for item in obj]
++                    else:
++                        return obj
++                self.ckpt['config'] = namespace_to_dict(config_dict)
+ load_checkpoint = _TracerComponent.load_checkpoint
